@@ -1,0 +1,80 @@
+$size-10: 0.55555556em
+$size-14: 0.77777778em
+$size-16: 0.88888889em
+$size-18: 1em
+$size-20: 1.11111111em
+$size-24: 1.33333333em
+$size-26: 1.44444444em
+$size-28: 1.55555556em
+$size-36: 2em
+$size-128: 8em
+$size-216: 12em
+
+$primary-color: #ed4f51
+$gray: 					#dfdfde
+$dark-gray: 		#474747
+$light-black: 	#272822
+$red:						#cf696a
+$yellow: 				#d3c543
+$green: 				#5cb347
+
+// -webkit-animation: NAME-OF-ANIMATION 5s infinite
+@mixin animation ( $value )
+	-webkit-animation: 	$value
+	-moz-animation: 		$value
+	-o-animation: 			$value
+	animation: 					$value
+
+@mixin border-radius( $value )
+	-webkit-border-radius: 	$value
+	-moz-border-radius: 		$value
+	border-radius: 					$value
+
+@mixin box-sizing( $value )
+	-webkit-box-sizing: $value
+	-moz-box-sizing: 		$value
+	box-sizing: 				$value
+
+@mixin box-shadow( $value )
+	-webkit-box-shadow: $value
+	-moz-box-shadow: 		$value
+	box-shadow: 				$value
+
+@mixin keyframe ( $name )
+	@-webkit-keyframes #{$name}
+		@content
+
+	@-moz-keyframes #{$name}
+		@content
+
+	@-o-keyframes #{$name}
+		@content
+
+	@keyframes #{$name}
+		@content
+
+@mixin opacity( $value )
+	-webkit-opacity: 	$value
+	-moz-opacity: 		$value
+	opacity: 					$value
+
+@mixin transition( $value )
+	-webkit-transition: $value
+	-moz-transition: 		$value
+	-ms-transition: 		$value
+	-o-transition: 			$value
+	transition: 				$value
+
+@mixin transform( $value )
+	-webkit-transform: 	$value
+	-moz-transform: 		$value
+	-ms-transform: 			$value
+	-o-transform: 			$value
+	transform: 					$value
+
+@mixin transform-origin( $value )
+	-webkit-transform-origin: $value
+	-moz-transform-origin: 		$value
+	-ms-transform-origin: 		$value
+	-o-transform-origin: 			$value
+	transform-origin: 				$value

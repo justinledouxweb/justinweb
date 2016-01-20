@@ -1,0 +1,11 @@
+{
+  "verbose": true,
+  "ignore": [
+  	"email-templates/*",
+  	"locales/*",
+  	"node_modules/*",
+  	"public/*",
+  	"views/*",
+    "Gruntfile.js"
+  ]
+}

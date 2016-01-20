@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="{{ locale }}">
+<head>
+	<meta charset="utf-8">
+	<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+	<meta content="width=device-width, user-scalable=no" name="viewport">
+	<meta content="Justin Ledoux" name="Author">
+	<meta name="description" content="I’m a UI, UX and Front-End Designer & Developer seeking to change the world with my art.">
+	<meta name="keywords" content="Justin Ledoux, Web Design, Web Designer, UI, UX, User Interface, User Experience, User Interface Designer, User Experience Designer, User Interface Developer, User Experience Developer">
+
+	{{!-- <meta property="og:title" content="{{{ seo.title }}}">
+	<meta property="og:site_name" content="EOC-Ready">
+	<meta property="og:description" content="{{{ seo.description }}}">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:image" content="{{ baseURL }}images/facebook-share-image.jpg">
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="{{{ seo.title }}}">
+	<meta name="twitter:description" content="{{{ seo.description }}}">
+	<meta name="twitter:image" content="{{ baseURL }}images/facebook-share-image.jpg"> --}}
+
+	<title>Justin Web</title>
+
+	{{!-- <link rel="apple-touch-icon" sizes="57x57" href="{{ staticResourcesPath }}images/favicon/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="{{ staticResourcesPath }}images/favicon/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="{{ staticResourcesPath }}images/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="{{ staticResourcesPath }}images/favicon/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="{{ staticResourcesPath }}images/favicon/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="{{ staticResourcesPath }}images/favicon/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="{{ staticResourcesPath }}images/favicon/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="{{ staticResourcesPath }}images/favicon/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="{{ staticResourcesPath }}images/favicon/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" href="{{ staticResourcesPath }}images/favicon/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="{{ staticResourcesPath }}images/favicon/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="{{ staticResourcesPath }}images/favicon/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="{{ staticResourcesPath }}images/favicon/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="{{ staticResourcesPath }}images/favicon/manifest.json">
+	<link rel="shortcut icon" href="{{ staticResourcesPath }}images/favicon/favicon.ico">
+	<meta name="apple-mobile-web-app-title" content="EOC-Ready">
+	<meta name="application-name" content="EOC-Ready">
+	<meta name="msapplication-TileColor" content="#40bbaf">
+	<meta name="msapplication-TileImage" content="{{ staticResourcesPath }}images/favicon/mstile-144x144.png">
+	<meta name="msapplication-config" content="{{ staticResourcesPath }}images/favicon/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff"> --}}
+
+	<link href='//fonts.googleapis.com/css?family=Open+Sans:700,600,400,300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="{{ staticResourcesPath }}css/main.min.css" media="screen">
+	{{!-- <link rel="stylesheet" type="text/css" href="{{ staticResourcesPath }}css/media-queries.min.css" media="screen"> --}}
+
+	{{#if isProduction}}
+		<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-40276622-1', 'justinweb.pro');
+      ga('send', 'pageview');
+		</script>
+	{{/if}}
+
+	<!--[if lt IE 9]>
+		<link rel="stylesheet" type="text/css" href="{{ staticResourcesPath }}css/ie8.min.css">
+
+		<script type="text/javascript" src="{{ staticResourcesPath }}js/ie8.min.js"></script>
+		<script type="text/javascript" src="{{ jqueryPathIE8 }}"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<div class="nav-bar">
+		<div class="container">
+			<button type="button" class="hamburger">Menu</button>
+			<a href="/login" class="custom-login">Customer Login</a>
+		</div>
+	</div>
+
+	<main>{{{body}}}</main>
+
+	{{{_sections.scriptPre}}}
+
+	<!--[if !IE 8]><!-->
+	<script type="text/javascript" src="{{ jqueryPath }}"></script>
+	<!--<![endif]-->
+	<script type="text/javascript" src="{{ staticResourcesPath }}js/main.min.js"></script>
+
+	{{{_sections.scriptPost}}}
+</body>
+</html>

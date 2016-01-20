@@ -1,0 +1,79 @@
+@import "common"
+
+.window__title-bar
+	position: relative
+	color: $dark-gray
+	background-color: $gray
+	padding: 3px 10px
+	@include border-radius( 5px 5px 0 0 )
+
+	.window__controls
+		position: absolute
+		display: block
+		top: 4px
+		left: 10px
+
+		span
+			position: relative
+			display: block
+			width: 15px
+			height: 15px
+			margin-right: 10px
+			float: left
+			@include border-radius( 50% )
+
+	.window__close
+		background-color: $red
+
+	.window__minimize
+		background-color: $yellow
+
+	.window__resize
+		background-color: $green
+
+	.window__title
+		font-size: $size-16
+		text-align: center
+
+.window__content-container
+	font-family: Menlo, Courier,  monospace
+	color: white
+	background-color: $light-black
+	min-height: 200px
+	padding: 20px
+
+	.window__gutter
+		text-align: right
+		width: 20px
+		margin-right: 20px
+		float: left
+		@include opacity( .5 )
+
+	.window__content
+		width: calc( 100% - 40px )
+
+		pre
+			white-space: pre-line
+
+.code--blue
+	color: #70cde5
+
+.code--pink
+	color: #ed2a73
+
+.code--yellow
+	color: #e6db73
+
+.window__cursor
+	color: white
+	@include animation( flash 1s infinite )
+
+@include keyframe ( flash )
+	0%
+		@include opacity( 1 )
+
+	50%
+		@include opacity( 0 )
+
+	100%
+		@include opacity( 1 )

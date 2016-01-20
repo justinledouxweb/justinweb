@@ -1,0 +1,64 @@
+{
+	"experiences": [
+		{
+			"position": "Web & Software Project Manager",
+			"location": "QuickSeries Publishing Inc.",
+			"timeframe": "Since July 2015 (Current)",
+			"description": "I started working alongside my father, helping him transform his business from a publishing to a software company. Managing a team of mobile and web developers, playing the role of the SCRUM master, participating in exec level decisions, designing app styleguides, developing websites and web apps, were only some of my duties."
+		},
+		{
+			"position": "Lead, Senior UI / UX / Front-End Designer & Developer",
+			"location": "Yellow Pages Group",
+			"timeframe": "October 2013 to July 2015",
+			"description": "I've embarked on a huge challenge: leading the front-end development efforts on a team that is changing the future of Yellow Pages Group. This tasks required us to consolidate over 40 sales tools into a single web application, using cutting edge web technologies, modern and interactive designs, and new ways of managing software development. This opportunity is my career's most important one, as it is the most complexe, challenging but fun project I have participated in so far."
+		},
+		{
+			"position": "UI / UX / Front-End Designer & Developer / Scrum Master",
+			"location": "Schwump GmbH",
+			"timeframe": "October 2013",
+			"description": "Schwump is a German company with a very challenging problem on their hands: Booking and calendars. For mortals, calendars don't seem like that big of a deal, but from a UI / UX and programming perspective, some heavy thinking is required. This is why I decided to embark on this quest, not only to solve, but to create the best booking and calendar experience available today. Also taking on the role of Scrum Master, I challenge myself and my team of developers to become and stay agile throughout the development process."
+		},
+		{
+			"position": "UI / UX Designer & Developer (contractual)",
+			"location": "QuickSeries Publishing inc.",
+			"timeframe": "Since October 2013 (Current)",
+			"description": "QuickSeries Publishing is growing their native software development business with a very interesting set of mobile apps. I am responsible to clearly define the flow of each of these apps, starting with wireframes, high fidelity prototypes, user testing, and finally wrapping each apps with a beautiful and simple User Interface."
+		},
+		{
+			"position": "Chief UX Developer",
+			"location": "Optima",
+			"timeframe": "June to October 2013",
+			"description": "Joining a team of designers and developers to carve out the best social and analytical web applications on the planet."
+		},
+		{
+			"position": "Web Designer & Developer",
+			"location": "David & Goliath",
+			"timeframe": "April to June 2013",
+			"description": "Managing and coordinating the web design and developement efforts to exceed our customer's expectations time after time."
+		},
+		{
+			"position": "UI / UX Consultant",
+			"location": "QuickSeries Publishing inc.",
+			"timeframe": "June 2011",
+			"description": "Taking part in initial project development meetings at QuickSeries Publishing, I had the opportunity to guide certain aspects of the UI / UX for their current QuickSeries Mobile app on iPhone, Android and BlackBerry."
+		},
+		{
+			"position": "JustinWEB",
+			"location": "Freelance",
+			"timeframe": "Since 2011 (Current)",
+			"description": "Freelance UI and UX designer, Front-End web developer, and consultant."
+		},
+		{
+			"position": "inVantage",
+			"location": "Co-Founder",
+			"timeframe": "August 2011 to August 2012",
+			"description": "inVantage was a small software development company with the goal to innovate and revolutionize how we integrate and use software for both the professional and the everyday user. It unfortunatly failed, but I still came out a winner with everything I've learned. I will forever carry this experience forward."
+		},
+		{
+			"position": "Luxart Productions inc",
+			"location": "Founder & CEO",
+			"timeframe": "August 2009 to January 2012",
+			"description": "Luxart Productions was a sound recording and film editing studio. This is where I learned most of what I know today about keeping a healthy client relationship and provide the best service I possibly could."
+		}
+	]
+}
