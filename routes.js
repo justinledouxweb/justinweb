@@ -13,5 +13,5 @@ module.exports = function ( app ) {
 	app.get( '/logout', login.logout )
 	app.post( '/login', login.postLogin )
 
-	app.get( '/admin', requireLogin.login, admin.admin )
+	app.get( '/dashboard', requireLogin.login, admin.dashboard )
 }
