@@ -1,15 +1,28 @@
 @import "common"
 
 .btn
-	&.btn--outline-white
-		color: white
-		border: 1px solid rgba( 255, 255, 255, .5 )
-		padding: 10px 15px
+	line-height: 1
+
+	&.btn--outline
+		color: $dark-gray
+		border: 1px solid $primary-color
+		padding: 13px 15px
 		@include border-radius( 5px )
 		@include transition( border-color .2s ease-in-out )
 
 		&:hover
+			border-color: rgba( 237, 79, 81, .5 )
+
+	&.btn--outline-white
+		color: white
+		border-color: rgba( 255, 255, 255, .5 )
+
+		&:hover
 			border-color: rgba( 255, 255, 255, 1 )
+
+	&.btn--outline-small
+		font-size: $size-14
+		padding: 5px 10px
 
 	&.btn--back
 		position: relative
@@ -26,3 +39,6 @@
 			background: image-url( 'back-icon.svg' ) no-repeat 0 0
 			background-size: 7px 23px
 			margin-right: 10px
+
+	&.btn--outline
+

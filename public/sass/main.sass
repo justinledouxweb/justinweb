@@ -6,11 +6,17 @@
 @import "modules/window"
 @import "modules/forms"
 @import "modules/buttons"
+@import "modules/nav-bar"
+@import "modules/side-menu"
+@import "modules/list"
+@import "modules/curtain"
+@import "modules/layout"
+@import "modules/toolbar"
 
 .header
 	color: white
 	background-color: $primary-color
-	padding: 130px 0 50px 0
+	padding: 65px 0 50px
 
 .introduction	
 	font-size: $size-26
@@ -30,47 +36,17 @@
 	height: auto
 	margin: 0 auto
 
-.nav-bar
-	position: fixed
-	display: block
-	width: 100%
-	top: 0
-	left: 0
-	border-bottom: 1px solid rgba( 0, 0, 0, .1 )
-	background-color: $primary-color
-	padding: 10px 0
-	z-index: 10
-
-	.nav-bar__title
-		font-size: $size-20
-		line-height: 1
-		color: white
-		padding: 12px 0
-
-	.container
-		position: relative
-
-.hamburger
-	font-weight: 300
-	color: rgba( 255, 255, 255, .5 )
-	@include transition( color .2s ease-in-out )
-
-	&:before
-		position: relative
-		display: inline-block
-		content: ""
-		width: 27px
-		height: 19px
-		bottom: -3px
-		background: image-url( 'hamburger.svg' ) no-repeat 0 0
-		margin-right: 15px
-
-	&:hover
-		color: rgba( 255, 255, 255, 1 )
-
-.custom-login
+.customer-login
 	font-size: $size-16
 	float: right
+
+.empty-placeholder
+	font-size: $size-14
+	font-style: italic
+	text-align: center
+	padding: 0 20px
+	margin-top: 50px
+	@include opacity( .5 )
 
 /************
  * SECTIONS *

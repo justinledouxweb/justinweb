@@ -4,7 +4,7 @@ module.exports = {
 	local: {
 		baseURL: 								'http://localhost:' + process.env.PORT + '/',
 		staticResourcesBaseURL: '/',
-		jQuery: 								'/js-dev/lib/jquery-2.1.4.js',
+		jQuery: 								'/js-dev/lib/jquery-2.2.0.min.js',
 		IE8jQuery: 							'/js-dev/lib/jquery-1.11.3.js',
 		mongodb: {
 			options: {

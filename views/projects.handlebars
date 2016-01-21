@@ -5,18 +5,32 @@
 {{/section}}
 
 <div class="column-1">
-	<ul class="list list--single-line">
-		{{#each projects }}
-			<li>
-				<a href="/projects/{{ this.id }}">
-					{{ this.name }}
-				</a>
-			</li>
-		{{/each}}
-	</ul>
+	<div class="toolbar">
+		<h1>Project List</h1>
+		<a href="/project/new" class="btn btn--outline btn--outline-small">New Project</a>
+	</div>
+
+	{{#if projects}}
+		<ul class="list list--single-line">
+			{{#each projects}}
+				<li>
+					<a href="/projects/{{ this.id }}">
+						{{ this.name }}
+					</a>
+				</li>
+			{{/each}}
+		</ul>
+	{{else}}
+		<p class="empty-placeholder">There are no projects at the moment.</p>
+	{{/if}}
 </div>
 
 <div class="column-2">
+	{{!-- <div class="toolbar">
+		<h1>Project List</h1>
+		<a href="/project/new" class="btn btn--outline btn--outline-small">New Project</a>
+	</div> --}}
+	
 	<div class="dashboard-content"></div>
 </div>
 

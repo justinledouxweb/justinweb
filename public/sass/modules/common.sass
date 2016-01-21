@@ -11,6 +11,7 @@ $size-128: 8em
 $size-216: 12em
 
 $primary-color: #ed4f51
+$lightest-gray: #e8e8e8
 $gray: 					#dfdfde
 $dark-gray: 		#474747
 $light-black: 	#272822
@@ -58,7 +59,7 @@ $green: 				#5cb347
 	-moz-opacity: 		$value
 	opacity: 					$value
 
-@mixin transition( $value )
+@mixin transition( $value... )
 	-webkit-transition: $value
 	-moz-transition: 		$value
 	-ms-transition: 		$value
