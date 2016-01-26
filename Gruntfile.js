@@ -13,7 +13,7 @@ var jsSettings = {
 	target: {
 		files: {
 			'public/js/main.min.js': [
-				// 'public/js-dev/modules/carousel.js',
+				'public/js-dev/modules/file-upload.js',
 				// 'public/js-dev/modules/stickify.js',
 				// 'public/js-dev/lib/echo.js',
 				// 'public/js-dev/lib/handlebars-v4.0.2.js',
@@ -49,7 +49,8 @@ var jsSettings = {
 		}
 	},
 	options: {
-		sourceMap: true
+		sourceMap: true,
+		separator: ';'
 	}
 }
 

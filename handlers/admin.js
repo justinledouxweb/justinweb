@@ -6,18 +6,3 @@ exports.dashboard = function ( req, res ) {
 	})
 }
 
-exports.projects = function ( req, res ) {
-	res.render( 'projects', {
-		layout: 		'admin',
-		activeLink: '/projects',
-		pageTitle: 	'Projects'
-	})
-}
-
-exports.userManagement = function ( req, res ) {
-	res.render( 'user-management', {
-		layout: 		'admin',
-		activeLink: '/user-management',
-		pageTitle: 	'User Management'
-	})
-}

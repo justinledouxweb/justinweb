@@ -10,5 +10,6 @@
 
 	$hamburger.on( 'click', toggleSideMenu )
 	$sideMenuCurtain.on( 'click', toggleSideMenu )
-	
+
+	$( 'input[type=file]' ).fileUpload( '.dropzone' )
 })( window, jQuery )

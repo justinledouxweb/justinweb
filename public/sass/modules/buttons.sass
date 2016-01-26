@@ -3,6 +3,12 @@
 .btn
 	line-height: 1
 
+	&.btn--filled
+		color: white
+		background-color: $primary-color
+		padding: 13px 15px
+		@include border-radius( 5px )
+
 	&.btn--outline
 		color: $dark-gray
 		border: 1px solid $primary-color
@@ -27,7 +33,8 @@
 	&.btn--back
 		position: relative
 		color: white
-		bottom: -5px
+		bottom: 0
+		margin-right: 20px
 
 		&:before
 			position: relative

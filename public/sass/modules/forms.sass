@@ -7,11 +7,39 @@
 		text-align: left
 		margin-bottom: 20px
 
+	label
+		font-size: $size-16
+		font-weight: 600
+
 	input
 		margin-bottom: 10px
+
+		&:not( [type=file] )
+			border: 1px solid $gray
+
+		&[type=file]
+			display: none
 
 	input
 		width: 100%
 
 	.btn
 		margin-bottom: 20px
+
+.form__image-preview
+	ul
+		li
+			background-color: $gray
+			padding: 20px
+
+			.image-cover
+				width: 100%
+				height: 250px
+				overflow: hidden
+
+			img
+				position: relative
+				display: block
+				width: 100%
+				height: auto
+				object-fit: cover
