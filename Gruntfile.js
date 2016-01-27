@@ -76,11 +76,7 @@ module.exports = function ( grunt ) {
 		cssmin: {
 			target: {
 				files: {
-					'public/css/main.min.css': 					['public/sass/build/main.css'],
-					// 'public/css/media-queries.min.css': ['public/sass/build/media-queries.css'],
-					// 'public/css/admin.min.css': 				['public/sass/build/admin.css'],
-					// 'public/css/login.min.css': 				['public/sass/build/login.css'],
-					// 'public/css/ie8.min.css': 					['public/sass/build/ie8.css'],
+					'public/css/main.min.css': ['public/sass/build/main.css'],
 				}
 			},
 			options: {
@@ -153,21 +149,8 @@ module.exports = function ( grunt ) {
 				tasks: [
 					'compass',
 					'cssmin',
-					// 'browserify',
-					// 'uglify',
 					'concat',
 					'copy:jsLib'
-				]
-			},
-			testFiles: {
-				files: [
-					'handlers/**/*',
-					'lib/**/*',
-					'test/**/*'
-				],
-				tasks: [
-					'mochaTest',
-					// 'blanket'
 				]
 			}
 		},
@@ -182,9 +165,5 @@ module.exports = function ( grunt ) {
 		'cssmin',
 		'uglify',
 		'copy'
-	])
-
-	grunt.registerTask( 'test', [
-		'watch:testFiles'
 	])
 }
