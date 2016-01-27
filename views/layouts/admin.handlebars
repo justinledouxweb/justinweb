@@ -6,7 +6,7 @@
 	<meta content="width=device-width, user-scalable=no" name="viewport">
 	<meta content="Justin Ledoux" name="Author">
 
-	<title>Justin Web - Dashboard</title>
+	<title>Justin Web - {{ pageTitle }}</title>
 
 	<link href='//fonts.googleapis.com/css?family=Open+Sans:700,600,400,300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="{{ staticResourcesPath }}css/main.min.css" media="screen">
@@ -22,12 +22,30 @@
 
 <body>
 	<div class="nav-bar">
-		<div class="container">
-			{{{_sections.nav}}}
-		</div>
+		{{{_sections.nav}}}
 	</div>
 
 	<main>{{{body}}}</main>
+
+	<nav class="side-menu" id="side-menu">
+		<header class="side-menu__header">
+			<h1>Menu</h1>
+		</header>
+
+		<ul class="list list--single-line list--no-bullets list--dark-list">
+			<li>
+				<a href="/dashboard" class="{{compare activeLink '/dashboard' '===' 'active' }}">Dashboard</a>
+			</li>
+			<li>
+				<a href="/projects" class="{{compare activeLink '/projects' '===' 'active' }}">Projects</a>
+			</li>
+			<li>
+				<a href="/user-management" class="{{compare activeLink '/user-management' '===' 'active' }}">User Management</a>
+			</li>
+		</ul>
+	</nav>
+
+	<div class="curtain" id="side-menu-curtain"></div>
 
 	{{{_sections.scriptPre}}}
 
