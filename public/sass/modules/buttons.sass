@@ -1,0 +1,28 @@
+@import "common"
+
+.btn
+	&.btn--outline-white
+		color: white
+		border: 1px solid rgba( 255, 255, 255, .5 )
+		padding: 10px 15px
+		@include border-radius( 5px )
+		@include transition( border-color .2s ease-in-out )
+
+		&:hover
+			border-color: rgba( 255, 255, 255, 1 )
+
+	&.btn--back
+		position: relative
+		color: white
+		bottom: -5px
+
+		&:before
+			position: relative
+			display: inline-block
+			content: ""
+			width: 7px
+			height: 23px
+			top: 4px
+			background: image-url( 'back-icon.svg' ) no-repeat 0 0
+			background-size: 7px 23px
+			margin-right: 10px

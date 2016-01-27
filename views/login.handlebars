@@ -1,0 +1,41 @@
+{{#section "nav"}}
+	<a href="/" class="btn btn--back">Back</a>
+{{/section}}
+
+<header class="header hero">
+	<div class="container">
+		<div class="row">
+			<p class="introduction col-sm-8 col-sm-push-2">
+				Welcome! Please use this form bellow to login to your customer portal.
+			</p>
+		</div>
+
+		<form action="/login" method="POST" class="form col-lg-4 col-lg-push-4 col-sm-6 col-sm-push-3">
+			<input type="hidden" name="_csrf" id="csrf" value="{{ csrfToken }}">
+
+			<fieldset>
+				<label for="email">Email</label>
+				<input type="email" name="email" id="email">
+			</fieldset>
+
+			<fieldset>
+				<label for="password">Password</label>
+				<input type="password" name="password" id="password">
+			</fieldset>
+
+			<button type="submit" class="btn btn--outline-white">Login</button>
+		</form>
+	</div>
+</header>
+
+<section class="section experiences">
+	<div class="container">
+		<h1>Customer Portal</h1>
+
+		<p>I created this customer portal in order to facilitate the process of viewing assets, mockups, interactive HTML prototypes, and more.</p>
+
+		<p>This is also a way to provide head hunters and individuals interested in hiring me, access to projects that I would otherwise have to show them in person, using my computer.</p>
+
+		<p>If you are this person, contact me via <a href="mailto:justin.ledoux@justinweb.pro">justin.ledoux@justinweb.pro</a> and I will provide you with the right access.</p>
+	</div>
+</section>

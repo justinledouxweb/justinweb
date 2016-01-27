@@ -4,11 +4,13 @@
 @import "lib/bootstrap-3.3.5"
 
 @import "modules/window"
+@import "modules/forms"
+@import "modules/buttons"
 
 .header
 	color: white
 	background-color: $primary-color
-	padding-top: 130px
+	padding: 130px 0 50px 0
 
 .introduction	
 	font-size: $size-26
@@ -17,6 +19,10 @@
 
 	em
 		font-weight: 700
+
+.hero
+	.window
+		margin-bottom: -50px
 
 .hero__logo
 	display: block
@@ -34,6 +40,12 @@
 	background-color: $primary-color
 	padding: 10px 0
 	z-index: 10
+
+	.nav-bar__title
+		font-size: $size-20
+		line-height: 1
+		color: white
+		padding: 12px 0
 
 	.container
 		position: relative
@@ -56,19 +68,9 @@
 	&:hover
 		color: rgba( 255, 255, 255, 1 )
 
-
 .custom-login
-	position: relative
-	color: white
 	font-size: $size-16
-	border: 1px solid rgba( 255, 255, 255, .5 )
-	padding: 10px 15px
 	float: right
-	@include border-radius( 5px )
-	@include transition( border-color .2s ease-in-out )
-
-	&:hover
-		border-color: rgba( 255, 255, 255, 1 )
 
 /************
  * SECTIONS *
@@ -80,6 +82,16 @@
 		color: $primary-color
 		font-weight: 700
 		margin-bottom: 50px
+
+	p
+		margin-bottom: 20px
+
+		a
+			color: $primary-color
+			text-decoration: underline
+
+			&:hover
+				text-decoration: none
 
 .experiences__list
 	dt

@@ -9,8 +9,8 @@ var express 					= require( 'express' ),
 		session 					= require( 'client-sessions' ),
 		mongoose 					= require( 'mongoose' ),
 		// i18n 							= require( 'i18n' ),
-		// formidable 				= require( 'formidable' ),
-		// flash 						= require( 'connect-flash' ),
+		formidable 				= require( 'formidable' ),
+		flash 						= require( 'connect-flash' ),
 		config 						= require( './config.js' )[ process.env.NODE_ENV ],
 		favicon 					= require( 'serve-favicon' )
 
@@ -57,27 +57,27 @@ app.use( session({
 	secret: config.session.key,
 	secure: true, // only use coockies over https
 }))
-// app.use( flash() )
-// app.use( function ( req, res, next ) {
-// 	var regex = new RegExp( 'multipart/form-data' )
+app.use( flash() )
+app.use( function ( req, res, next ) {
+	var regex = new RegExp( 'multipart/form-data' )
 
-// 	if ( regex.test( req.headers[ 'content-type' ] ) ) {
-// 		var form = new formidable.IncomingForm()
+	if ( regex.test( req.headers[ 'content-type' ] ) ) {
+		var form = new formidable.IncomingForm()
 
-// 		form.multiples = true
-// 		form.parse( req, function ( err, fields, files ) {
-// 			if ( err ) return console.error( err )
+		form.multiples = true
+		form.parse( req, function ( err, fields, files ) {
+			if ( err ) return console.error( err )
 
-// 	    req.files = files
-// 			req.body = fields
-// 			next()
-// 	  })
-// 	}
+	    req.files = files
+			req.body = fields
+			next()
+	  })
+	}
 
-// 	else {
-// 		next()
-// 	}
-// })
+	else {
+		next()
+	}
+})
 
 app.use( csurf() )
 app.use( express.static( __dirname + '/public/' ) )
