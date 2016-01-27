@@ -4,7 +4,7 @@ module.exports = {
 	local: {
 		baseURL: 								'http://localhost:' + process.env.PORT + '/',
 		staticResourcesBaseURL: '/',
-		jQuery: 								'/js-dev/lib/jquery-2.1.4.js',
+		jQuery: 								'/js-dev/lib/jquery-2.2.0.min.js',
 		IE8jQuery: 							'/js-dev/lib/jquery-1.11.3.js',
 		mongodb: {
 			options: {
@@ -65,26 +65,20 @@ module.exports = {
 	// 	session: { key: process.env.SESSION_KEY },
 	// },
 
-	// production: {
-	// 	baseURL: 								'http://eocready.com/',
-	// 	staticResourcesBaseURL: '/',
-	// 	uploadDirectory: 				'/var/www/share/eocready/uploaded-images/production/',
-	// 	uploadBaseURL: 					'//eocready.com/share/uploaded-images/production/',
-	// 	emailStaticResources: 	'http://eocready.com/',
-	// 	leadFormToEmail: 				'eoc-leads@quickseries.com',
-	// 	leadFormFromEmail: 			'eoc-leads@quickseries.com',
-	// 	jQuery: 								'//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js',
-	// 	IE8jQuery: 							'//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js',
-	// 	froalaLicense:					'2sxD-17kF-11zxdB2G-7ol==',
-	// 	mongodb: {
-	// 		options: {
-	// 			server: {
-	// 				socketOptions: { keepAlive: 1 }
-	// 			}
-	// 		},
-	// 		connectionString: 'mongodb://' + process.env.MONGODB_USER + ':' + process.env.MONGODB_PASS + '@192.168.10.22:27017/eocready-prod'
-	// 	},
-	// 	cookies: { key: process.env.COOKIE_KEY },
-	// 	session: { key: process.env.SESSION_KEY },
-	// }
+	production: {
+		baseURL: 								'http://justweb.heroku.com',
+		staticResourcesBaseURL: '/',
+		jQuery: 								'/js-dev/lib/jquery-2.2.0.min.js',
+		IE8jQuery: 							'/js-dev/lib/jquery-1.11.3.js',
+		mongodb: {
+			options: {
+				server: {
+					socketOptions: { keepAlive: 1 }
+				}
+			},
+			connectionString: 'mongodb://localhost:27017/justinweb-local'
+		},
+		cookies: { key: process.env.COOKIE_KEY },
+		session: { key: process.env.SESSION_KEY },
+	}
 }

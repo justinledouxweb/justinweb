@@ -1,0 +1,53 @@
+{{#section "nav"}}
+	<a href="/dashboard" class="btn btn--back">Back</a>
+	<span class="nav-bar__separator"></span>
+	<h1 class="nav-bar__title">{{ pageTitle }}</h1>
+{{/section}}
+
+<section>
+	<div class="container">
+		<form method="POST" action="/projects/new" class="form" enctype="multipart/form-data">
+			<input type="hidden" name="_csrf" id="csrf" value="{{ csrfToken }}">
+			<input type="hidden" name="project-id" id="project-id" value="{{ projectId }}">
+
+			<fieldset>
+				<label for="name">Project Name</label>
+				<input type="text" name="project-name" id="project-name">
+			</fieldset>
+
+			<fieldset>
+				<label for="url">Link</label>
+				<input type="url" name="url" id="url">
+			</fieldset>
+
+			<fieldset>
+				<label for="images">Images</label>
+				<input type="file" name="images" id="images" accept="image/*" multiple>
+				<div class="dropzone">
+					<p>Drag &amp; drop image files here or <a href="#">Browse</a>.</p>
+				</div>
+			</fieldset>
+
+			<fieldset class="form__image-preview">
+				
+			</fieldset>
+
+			<button type="submit" class="btn btn--filled">Submit</button>
+		</form>
+	</div>
+</section>
+
+{{#section "templated"}}
+	<script id="project-view-template" type="text/x-handlebars-template">
+		<ul>
+			\{{#each images}}
+				<li class="col-sm-3">
+					<div class="image-cover">
+						<img src="/images/loading-images.gif">
+					</div>
+					<p>\{{ this.fileName }}</p>
+				</li>
+			\{{/each}}
+		</ul>
+	</script>
+{{/section}}

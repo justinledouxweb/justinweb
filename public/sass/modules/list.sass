@@ -1,0 +1,34 @@
+@import "common"
+
+.list
+	margin-top: 8px
+	
+	li
+		a
+			display: block
+
+	&.list--no-bullets
+		list-style: none
+		padding: 0
+
+	&.list--single-line
+		li
+			a
+				border-left: 5px solid transparent
+				padding: 15px
+				@include transition( background-color .1s linear )
+
+				&.active
+					border-left-color: $primary-color
+					background-color: rgba( 0, 0, 0, .05 )
+
+				&:hover
+					background-color: rgba( 0, 0, 0, .05 )
+
+	&.list--dark-list
+		li
+			a
+				&.active,
+				&:hover
+					background-color: rgba( 255, 255, 255, .1 )
+
