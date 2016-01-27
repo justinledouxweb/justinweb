@@ -1,0 +1,17 @@
+{
+  "name": "justinweb",
+  "scripts": {
+    "postdeploy": "grunt all"
+  },
+  "env": {
+    "COOKIE_KEY": {
+      "required": true
+    },
+    "SESSION_KEY": {
+      "required": true
+    }
+  },
+  "addons": [
+    "mongolab"
+  ]
+}
