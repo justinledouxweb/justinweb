@@ -1,6 +1,7 @@
 /node_modules/
 .sass-cache
 .env
+.DS_Store
 
 npm-debug.log
 
