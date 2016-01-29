@@ -8,7 +8,7 @@ var express 					= require( 'express' ),
 		cookieParser 			= require( 'cookie-parser' ),
 		session 					= require( 'client-sessions' ),
 		mongoose 					= require( 'mongoose' ),
-		// i18n 							= require( 'i18n' ),
+		i18n 							= require( 'i18n' ),
 		formidable 				= require( 'formidable' ),
 		flash 						= require( 'connect-flash' ),
 		config 						= require( './config.js' )[ process.env.NODE_ENV ],
@@ -25,10 +25,10 @@ mongoose.connection.on( 'error', function ( err ) {
 	return
 })
 
-// i18n.configure({
-// 	locales: 	[ 'en' ],
-// 	cookie: 	'i18n'
-// })
+i18n.configure({
+	locales: 	[ 'en', 'fr' ],
+	cookie: 	'i18n'
+})
 
 var hdb = handlebars.create( handlebarsConfig.handlebars )
 app.engine( 'handlebars', hdb.engine )
@@ -40,7 +40,7 @@ app.set( 'view options', {
 // App setup environment port
 app.set( 'port', process.env.PORT || 5000 )
 app.enable( 'trust proxy' )
-// app.use( i18n.init )
+app.use( i18n.init )
 app.use( bodyParser.urlencoded({ extended: true }) )
 app.use( bodyParser.json() )
 app.use( cookieParser( config.cookies.key ) )
