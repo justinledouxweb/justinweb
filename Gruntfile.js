@@ -6,7 +6,7 @@ var tasks = [
 	'grunt-contrib-uglify',
 	'grunt-contrib-cssmin',
 	'grunt-contrib-concat',
-	'grunt-contrib-copy',
+	'grunt-contrib-copy'
 ]
 
 var jsSettings = {
@@ -17,8 +17,8 @@ var jsSettings = {
 				// 'public/js-dev/modules/stickify.js',
 				// 'public/js-dev/lib/echo.js',
 				// 'public/js-dev/lib/handlebars-v4.0.2.js',
-				'public/js-dev/main.js',
-			],
+				'public/js-dev/main.js'
+			]
 
 			// 'public/js/ie8.min.js': [
 			// 	'public/js-dev/lib/html5-shiv.js',
@@ -153,7 +153,7 @@ module.exports = function ( grunt ) {
 					'copy:jsLib'
 				]
 			}
-		},
+		}
 	})
 
 	grunt.registerTask( 'static', [
