@@ -18,24 +18,6 @@ module.exports = {
 		session: { key: process.env.SESSION_KEY },
 	},
 
-	// heroku
-	production: {
-		baseURL: 								'http://justweb.heroku.com',
-		staticResourcesBaseURL: '/',
-		jQuery: 								'/js-dev/lib/jquery-2.2.0.min.js',
-		IE8jQuery: 							'/js-dev/lib/jquery-1.11.3.js',
-		mongodb: {
-			options: {
-				server: {
-					socketOptions: { keepAlive: 1 }
-				}
-			},
-			connectionString: 'mongodb://localhost:27017/justinweb-local'
-		},
-		cookies: { key: process.env.COOKIE_KEY },
-		session: { key: process.env.SESSION_KEY },
-	},
-
 	staging: {
 		baseURL: 								'http://justweb.heroku.com',
 		staticResourcesBaseURL: '/',
@@ -47,7 +29,7 @@ module.exports = {
 					socketOptions: { keepAlive: 1 }
 				}
 			},
-			connectionString: 'mongodb://localhost:27017/justinweb-local'
+			connectionString: process.env.MONGOLAB_URI
 		},
 		cookies: { key: process.env.COOKIE_KEY },
 		session: { key: process.env.SESSION_KEY },
@@ -64,7 +46,7 @@ module.exports = {
 					socketOptions: { keepAlive: 1 }
 				}
 			},
-			connectionString: 'mongodb://localhost:27017/justinweb-local'
+			connectionString: process.env.MONGOLAB_URI
 		},
 		cookies: { key: process.env.COOKIE_KEY },
 		session: { key: process.env.SESSION_KEY },
