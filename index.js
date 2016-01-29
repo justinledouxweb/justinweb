@@ -96,6 +96,9 @@ app.use( function ( req, res, next ) {
 	res.locals.isProduction 				= process.env.NODE_ENV === 'production'
 		|| process.env.NODE_ENV === 'prod'
 		|| process.env.NODE_ENV === 'qsProd'
+
+	res.locals.isLoggedIn = req.session && req.session.user ? true : false
+
 	next()
 })
 
