@@ -43,10 +43,10 @@ app.enable( 'trust proxy' )
 // app.use( i18n.init )
 app.use( bodyParser.urlencoded({ extended: true }) )
 app.use( bodyParser.json() )
-app.use( cookieParser( config.cookies.key ) )
+app.use( cookieParser( process.env.COOKIE_KEY ) )
 app.use( session({
 	cookieName: 		'session',
-	secret: 				config.session.key,
+	secret: 				process.env.SESSION_KEY,
 	duration: 			7 * 24 * 60 * 60 * 1000, // 7 days
 	activeDuration: 1 * 24 * 60 * 60 * 1000, // 1 day
 	httpOnly: 			true, // don't let javascript access coockies ever
@@ -54,7 +54,7 @@ app.use( session({
 }))
 app.use( session({
 	cookieName: 'eocFormData',
-	secret: config.session.key,
+	secret: process.env.SESSION_KEY,
 	secure: true, // only use coockies over https
 }))
 app.use( flash() )
@@ -84,7 +84,7 @@ app.use( express.static( __dirname + '/public/' ) )
 app.use( favicon( __dirname + '/public/favicon.ico' ) )
 
 app.use( function ( req, res, next ) {
-	res.locals.baseURL 	= config.baseURL
+	res.locals.baseURL 							= config.baseURL
 	res.locals.staticResourcesPath 	= config.staticResourcesBaseURL
 	// res.locals.uploadedFilePath 		= config.uploadBaseURL
 	res.locals.jqueryPath 					= config.jQuery

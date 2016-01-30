@@ -14,8 +14,11 @@ module.exports = {
 			},
 			connectionString: 'mongodb://localhost:27017/justinweb-local'
 		},
-		cookies: { key: process.env.COOKIE_KEY },
-		session: { key: process.env.SESSION_KEY },
+		s3: {
+			accessKeyId: 'Your access key',
+			secretAccessKey: 'Your secret access key',
+			region: 'us-west-2'
+		}
 	},
 
 	staging: {
@@ -30,9 +33,7 @@ module.exports = {
 				}
 			},
 			connectionString: process.env.MONGOLAB_URI
-		},
-		cookies: { key: process.env.COOKIE_KEY },
-		session: { key: process.env.SESSION_KEY },
+		}
 	},
 
 	production: {
@@ -47,8 +48,6 @@ module.exports = {
 				}
 			},
 			connectionString: process.env.MONGOLAB_URI
-		},
-		cookies: { key: process.env.COOKIE_KEY },
-		session: { key: process.env.SESSION_KEY },
+		}
 	}
 }
