@@ -3,13 +3,14 @@ var bcrypt = require( 'bcryptjs' )
 var User = require( '../models/user.js' )
 
 exports.login = function ( req, res ) {
-	res.render( 'login' )
+	if ( !req.session.user ) res.render( 'login' )
+	else res.redirect( '/dashboard' )
 }
 
 exports.logout = function ( req, res ) {
 	req.session.reset()
 	delete res.locals.user
-	res.redirect( '/login' )
+	res.redirect( '/' )
 }
 
 function invalidaEmailPassword ( req, res ) {
