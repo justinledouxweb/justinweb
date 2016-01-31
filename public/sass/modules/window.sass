@@ -39,8 +39,8 @@
 .window__content-container
 	font-family: Menlo, Courier,  monospace
 	color: white
+	min-height: 200px
 	background-color: $light-black
-	// min-height: 200px
 	padding: 20px
 
 	.window__gutter
@@ -72,6 +72,12 @@
 				word-break: normal
 				word-wrap: normal
 				tab-size: 4
+
+@media (max-width: 767px)
+	.hero
+		.window__content-container
+			min-height: 150px
+			margin-bottom: -70px
 
 .code--blue
 	color: #70cde5
