@@ -52,7 +52,7 @@
 
 			$.ajax({
 				url: '/projects/new',
-				method: method,
+				method: 'POST',
 				data: formData,
 				processData: false,
 				contentType: false,

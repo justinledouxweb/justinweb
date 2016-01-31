@@ -1,12 +1,22 @@
 var Project = require( '../models/project.js' )
 
-var async 			= require( 'async' ),
-		aws 				= require( 'aws-sdk' )
+var fs = require( 'fs.extra' ),
+		toolbelt = require( '../lib/toolbelt' )
+// var async 			= require( 'async' ),
+// 		aws 				= require( 'aws-sdk' )
 
-aws.config.update( config.s3 );
+// aws.config.update( config.s3 );
 
-var s3 					= new aws.S3(),
-		bucketName 	= 'justinweb'
+// var s3 					= new aws.S3(),
+// 		bucketName 	= 'justinweb'
+
+var cloudinary = require( 'cloudinary' )
+
+cloudinary.config({
+	cloud_name: 'hd7fbpcuh',
+	api_key: process.env.CLOUDINARY_API_KEY,
+	api_secret: process.env.CLOUDINARY_API_SECRET
+})
 
 exports.projects = function ( req, res ) {
 	res.render( 'projects', {
@@ -29,34 +39,13 @@ exports.postProject = function ( req, res ) {
 			imagePaths = []
 
 	if ( req.files ) {
-		async.each(
-			req.files[ 'images[]' ],
-			function ( file, cb ) {
-				cloudinary.uploader.upload( file.path, function ( err, result ) {
-					if ( err ) return cb( err )
-					imagePaths.push( result )
-					cb()
-				})
-			}, function ( err ) {
-				// if ( err ) return console.error( err )
+		var newPath = './public/uploads/' + toolbelt.randomString( 10, 'aA#' ) + '/' + image.name
 
-				console.log( imagePaths )
-				// console.log( 'testttejgeheirgiuehgiuhegiuerigeliurgeiuhrgieuhg' )
-
-				return
-				newProject.save( function ( err, doc ) {
-					if ( err ) return console.error( err )
-
-					return
-
-					return res.json({
-						success: true,
-						data: {
-							id: doc._id
-						}
-					})
-				})
-			})
+		fs.copyRecursive( image.path, newPath, function ( err ) {
+			if ( err ) return reject( err )
+			
+			newProject.save()
+		})
 	}
 
 	else {
