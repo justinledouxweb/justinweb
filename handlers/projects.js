@@ -1,7 +1,7 @@
 var Project = require( '../models/project.js' )
 
-var async 			= require( 'async' ),
-		aws 				= require( 'aws-sdk' )
+var async = require( 'async' ),
+		aws 	= require( 'aws-sdk' )
 
 aws.config.update( config.s3 );
 
