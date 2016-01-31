@@ -55,6 +55,26 @@
 		pre
 			white-space: pre-line
 
+		// pre
+		// 	position: relative
+		// 	padding-left: 3.8em
+		// 	counter-reset: linenumber
+		// 	overflow: auto
+		// 	direction: ltr
+		// 	text-align: left
+		// 	white-space: pre
+		// 	word-spacing: normal
+		// 	word-break: normal
+		// 	word-wrap: normal
+
+		// 	code
+		// 		direction: ltr
+		// 		text-align: left
+		// 		white-space: pre
+		// 		word-spacing: normal
+		// 		word-break: normal
+		// 		word-wrap: normal
+
 .code--blue
 	color: #70cde5
 
@@ -77,3 +97,9 @@
 
 	100%
 		@include opacity( 1 )
+
+@media (max-width: 768px)
+	.window__content-container
+		.window__gutter,
+		.window__content
+			font-size: $size-16
