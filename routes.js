@@ -12,16 +12,16 @@ module.exports = function ( app ) {
 	app.get( '/', 			pages.home )
 
 	// ADMIN ROUTES
-	app.get( '/login', 	login.login )
-	app.get( '/logout', login.logout )
-	app.post( '/login', login.postLogin )
+	// app.get( '/login', 	login.login )
+	// app.get( '/logout', login.logout )
+	// app.post( '/login', login.postLogin )
 
-	app.get( '/dashboard', requireLogin.login, admin.dashboard )
+	// app.get( '/dashboard', requireLogin.login, admin.dashboard )
 
-	app.get( '/projects', requireLogin.login, auth.isAdmin, projects.projects )
-	app.get( '/projects/new', requireLogin.login, auth.isAdmin, projects.newProject )
-	app.post( '/projects/new', requireLogin.login, auth.isAdmin, projects.postProject )
-	app.patch( '/projects/new', requireLogin.login, auth.isAdmin, projects.patchProject )
+	// app.get( '/projects', requireLogin.login, auth.isAdmin, projects.projects )
+	// app.get( '/projects/new', requireLogin.login, auth.isAdmin, projects.newProject )
+	// app.post( '/projects/new', requireLogin.login, auth.isAdmin, projects.postProject )
+	// app.patch( '/projects/new', requireLogin.login, auth.isAdmin, projects.patchProject )
 
-	app.get( '/user-management', 	requireLogin.login, auth.isAdmin, userManagement.userManagement )
+	// app.get( '/user-management', 	requireLogin.login, auth.isAdmin, userManagement.userManagement )
 }
