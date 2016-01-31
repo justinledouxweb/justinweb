@@ -34,12 +34,13 @@
 	.window__title
 		font-size: $size-16
 		text-align: center
+		margin-bottom: 0
 
 .window__content-container
 	font-family: Menlo, Courier,  monospace
 	color: white
-	background-color: $light-black
 	min-height: 200px
+	background-color: $light-black
 	padding: 20px
 
 	.window__gutter
@@ -50,10 +51,33 @@
 		@include opacity( .5 )
 
 	.window__content
-		width: calc( 100% - 40px )
-
 		pre
-			white-space: pre-line
+			position: relative
+			padding-left: 10px
+			overflow: auto
+			direction: ltr
+			text-align: left
+			white-space: pre
+			word-spacing: normal
+			word-break: normal
+			word-wrap: normal
+			tab-size: 4
+			-webkit-overflow-scrolling: touch
+
+			code
+				direction: ltr
+				text-align: left
+				white-space: pre
+				word-spacing: normal
+				word-break: normal
+				word-wrap: normal
+				tab-size: 4
+
+@media (max-width: 767px)
+	.hero
+		.window__content-container
+			min-height: 150px
+			margin-bottom: -70px
 
 .code--blue
 	color: #70cde5
@@ -77,3 +101,21 @@
 
 	100%
 		@include opacity( 1 )
+
+@media (max-width: 767px)
+	.window__content-container
+		.window__gutter,
+		.window__content
+			font-size: $size-16
+
+@media (max-width: 768px)
+	.window__content-container
+		padding: 15px
+
+		.window__gutter,
+		.window__content
+			font-size: $size-12
+
+		.window__gutter
+			width: 15px
+			margin-right: 5px
