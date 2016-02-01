@@ -19,7 +19,7 @@ module.exports = {
 	},
 
 	staging: {
-		baseURL: 								'http://justweb.heroku.com',
+		baseURL: 								'http://justweb.heroku.com/',
 		staticResourcesBaseURL: '/',
 		jQuery: 								'/js-dev/lib/jquery-2.2.0.min.js',
 		IE8jQuery: 							'/js-dev/lib/jquery-1.11.3.js',
@@ -36,7 +36,7 @@ module.exports = {
 	},
 
 	production: {
-		baseURL: 								'http://justweb.heroku.com',
+		baseURL: 								'http://www.justweb.pro/',
 		staticResourcesBaseURL: '/',
 		jQuery: 								'/js-dev/lib/jquery-2.2.0.min.js',
 		IE8jQuery: 							'/js-dev/lib/jquery-1.11.3.js',
