@@ -14,6 +14,20 @@
 @import "modules/toolbar"
 @import "modules/dropzone"
 
+@include keyframe ( fadeIn )
+	from
+		@include opacity( 0 )
+
+	to
+		@include opacity( 1 )
+
+@include keyframe ( slideUp )
+	from
+		@include transform( translateY( 100% ) )
+
+	to
+		@include transform( translateY( 0 ) )
+
 .header
 	color: white
 	background-color: $primary-color
@@ -23,19 +37,34 @@
 	font-size: $size-26
 	text-align: center
 	margin: 50px 0 80px
+	@include animation( fadeIn 1s .6s 1 backwards )
 
 	em
 		font-weight: 700
 
+@media (max-width: 440px)
+	.introduction
+		font-size: $size-22
+
 .hero
+	overflow: hidden
+
 	.window
 		margin-bottom: -50px
+		@include animation( slideUp 1s 1s backwards )
+
+@media (max-width: 767px)
+	.hero
+		.window
+			margin-bottom: -70px
 
 .hero__logo
 	display: block
-	width: 300px
+	width: auto
+	max-width: 300px
 	height: auto
 	margin: 0 auto
+	@include animation( fadeIn 1s .1s 1 backwards )
 
 .customer-login
 	font-size: $size-16

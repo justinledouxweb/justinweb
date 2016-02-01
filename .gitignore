@@ -1,4 +1,3 @@
-
 /node_modules/
 .sass-cache
 .env
@@ -10,3 +9,4 @@ public/sass/build
 public/js
 public/js-dev/build
 public/css
+public/uploads/*

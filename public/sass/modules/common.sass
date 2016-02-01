@@ -1,8 +1,10 @@
 $size-10: 0.55555556em
+$size-12: 0.66666667em
 $size-14: 0.77777778em
 $size-16: 0.88888889em
 $size-18: 1em
 $size-20: 1.11111111em
+$size-22: 1.22222222em
 $size-24: 1.33333333em
 $size-26: 1.44444444em
 $size-28: 1.55555556em
@@ -80,3 +82,8 @@ $green: 				#5cb347
 	-ms-transform-origin: 		$value
 	-o-transform-origin: 			$value
 	transform-origin: 				$value
+
+@mixin animation-fill-mode ( $value )
+	-webkit-animation-fill-mode: $value
+	-moz-animation-fill-mode: $value
+	animation-fill-mode: $value

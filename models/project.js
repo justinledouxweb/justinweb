@@ -2,7 +2,7 @@ var mongoose = require( 'mongoose' )
 
 var projectSchema = mongoose.Schema({
 	name: 				String,
-	images: 			[],
+	images: 			Array,
 	link: 				String,
 	dateCreated: 	{ type: Date, default: Date.now }
 })

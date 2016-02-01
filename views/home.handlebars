@@ -5,7 +5,9 @@
 <header class="header hero">
 	<div class="container">
 		<div class="row">
-			<img src="/images/signature.svg" class="hero__logo">
+			<div class="col-sm-12">
+				<img src="/images/signature.svg" class="hero__logo">
+			</div>
 
 			<p class="introduction col-sm-8 col-sm-push-2">
 				I’m a <em>UI</em>, <em>UX</em> and <em>Front-End</em> Designer &amp; Developer seeking to change the world with my art.
@@ -77,9 +79,8 @@
 					<pre><code><span class="code--blue">var</span> techs <span class="code--pink">=</span> [
 						{{#each technologies.technologies~}}
 							&nbsp;&nbsp;<span class="code--yellow">"{{ this }}"</span>,
-						{{/each}}
-						];
-					</code></pre>
+						{{/each~}}
+						];</code></pre>
 				</div>
 			</div>
 		</div>
@@ -114,9 +115,8 @@
 					<pre><code>&lt;<span class="code--pink">ul</span>&gt;
 						{{#each competencies.competencies~}}
 							&nbsp;&nbsp;&lt;<span class="code--pink">li</span>&gt;{{ this }}&lt;/<span class="code--pink">li</span>&gt;
-						{{/each}}
+						{{/each~}}
 						&lt;/<span class="code--pink">ul</span>&gt;</code></pre>
-					</code></pre>
 				</div>
 			</div>
 		</div>
