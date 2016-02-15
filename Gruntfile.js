@@ -6,6 +6,7 @@ const tasks = [
 	'grunt-contrib-uglify',
 	'grunt-contrib-cssmin',
 	'grunt-contrib-concat',
+	'grunt-contrib-copy',
 	'grunt-babel'
 ]
 
@@ -13,8 +14,8 @@ const jsSettings = {
 	target: {
 		files: {
 			'public/js/main.min.js': [
-				'public/js-dev/modules/file-upload.js',
-				'public/js/main.js'
+				// 'public/js-dev/modules/file-upload.js',
+				'public/js/main.min.js'
 			]
 		}
 	},
@@ -58,15 +59,25 @@ module.exports = function ( grunt ) {
 
 		concat: jsSettings,
 
+		copy: {
+			jsLib: {
+				expand: true,
+				flaten: true,
+				cwd: 'public/js-dev/',
+				src: 'lib/*',
+				dest: 'public/js/',
+			}
+		},
+
 		babel: {
 			options: {
 				sourceMap: true,
-				presets: ['es2015']
+				presets: ['es2015', 'react']
 			},
 
 			dist: {
 				files: {
-					'public/js/main.js': 'public/js-dev/main.js'
+					'public/js/main.min.js': 'public/js-dev/main.js'
 				}
 			}
 		},
@@ -83,6 +94,7 @@ module.exports = function ( grunt ) {
 				tasks: [
 					'compass',
 					'cssmin',
+					'copy:jsLib',
 					'babel',
 					// 'concat',
 					// 'copy:jsLib'
@@ -98,6 +110,7 @@ module.exports = function ( grunt ) {
 	grunt.registerTask( 'all', [
 		'compass',
 		'cssmin',
+		'copy:jsLib',
 		'babel',
 		'uglify'
 	])

@@ -1,6 +1,7 @@
 @import "modules/common"
 @import "modules/reset"
 @import "modules/elements"
+@import "modules/animations"
 @import "lib/bootstrap-3.3.5"
 
 @import "modules/window"
@@ -13,20 +14,6 @@
 @import "modules/layout"
 @import "modules/toolbar"
 @import "modules/dropzone"
-
-@include keyframe ( fadeIn )
-	from
-		@include opacity( 0 )
-
-	to
-		@include opacity( 1 )
-
-@include keyframe ( slideUp )
-	from
-		@include transform( translateY( 100% ) )
-
-	to
-		@include transform( translateY( 0 ) )
 
 .header
 	color: white
@@ -100,7 +87,7 @@
 				text-decoration: none
 
 .experiences__list
-	dt
+	h2
 		font-size: $size-20
 		font-weight: 600
 		margin-bottom: 10px
@@ -109,7 +96,7 @@
 			color: $primary-color
 			font-weight: 400
 
-	dd
+	p
 		margin-bottom: 50px
 
 		small

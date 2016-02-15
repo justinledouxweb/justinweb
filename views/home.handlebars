@@ -2,6 +2,8 @@
 	<button type="button" class="hamburger">Menu</button>
 {{/section}}
 
+<div id="example"></div>
+
 <header class="header hero">
 	<div class="container">
 		<div class="row">
@@ -39,7 +41,8 @@
 	<div class="container">
 		<h1>Experiences</h1>
 
-		<dl class="experiences__list">
+		<div id="experiences"></div>
+		{{!-- <dl class="experiences__list">
 			{{#each experiences}}
 				<dt>{{ this.position }} <span>// {{ this.location }}</span></dt>
 				<dd>
@@ -47,7 +50,7 @@
 					{{ this.description }}
 				</dd>
 			{{/each}}
-		</dl>
+		</dl> --}}
 	</div>
 </section>
 
@@ -69,11 +72,11 @@
 			<div class="window__content-container window__line-number clearfix">
 				<div class="window__content">
 					<pre><code><span class="code--blue">var</span> techs <span class="code--pink">=</span> [
-						{{#each technologies.technologies~}}
+						{{#each technologies~}}
 							&nbsp;&nbsp;<span class="code--yellow">"{{ this }}"</span>,
 						{{/each~}}
 						];<span class="window__gutter">
-							{{~#for technologies.technologies 2 ~}}
+							{{~#for technologies 2 ~}}
 								<span></span>
 							{{/for~}}
 						</span></code></pre>
@@ -101,11 +104,11 @@
 			<div class="window__content-container window__line-number clearfix">
 				<div class="window__content">
 					<pre><code>&lt;<span class="code--pink">ul</span>&gt;
-						{{#each competencies.competencies~}}
+						{{#each competencies~}}
 							&nbsp;&nbsp;&lt;<span class="code--pink">li</span>&gt;{{ this }}&lt;/<span class="code--pink">li</span>&gt;
 						{{/each~}}
 						&lt;/<span class="code--pink">ul</span>&gt;<span class="window__gutter">
-							{{~#for competencies.competencies 2 ~}}
+							{{~#for competencies 2 ~}}
 								<span></span>
 							{{/for~}}
 						</span></code></pre>
@@ -114,3 +117,9 @@
 		</div>
 	</div>
 </section>
+
+{{#section "scriptPre"}}
+	<script>
+		window.localData = {{{localData}}}
+	</script>
+{{/section}}

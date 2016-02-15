@@ -7,20 +7,14 @@ const experiences 	= require( '../data/experiences.json' ).experiences,
 
 exports.home = ( req, res ) => {
 	res.render( 'home', {
-		experiences: experiences,
-
-		// TODO: not clean, perhaps move the lineNumber logic to a
-		// custom handlebars helper...
-		technologies: {
+		localData: JSON.stringify({
+			experiences: experiences,
 			technologies: technologies,
-			lineNumber: technologies.length + 2,
-		},
+			competencies: competencies
+		}),
 
-		// TODO: not clean, perhaps move the lineNumber logic to a
-		// custom handlebars helper...
-		competencies: {
-			competencies: competencies,
-			lineNumber: competencies.length + 2
-		}
+		experiences: experiences,
+		technologies: technologies,
+		competencies: competencies,
 	})
 }
