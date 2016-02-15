@@ -1,13 +1,15 @@
-var bcrypt = require( 'bcryptjs' )
+'use strict'
 
-var User = require( '../models/user.js' )
+let bcrypt = require( 'bcryptjs' )
 
-exports.login = function ( req, res ) {
+let User = require( '../models/user.js' )
+
+exports.login = ( req, res ) => {
 	if ( !req.session.user ) res.render( 'login' )
 	else res.redirect( '/dashboard' )
 }
 
-exports.logout = function ( req, res ) {
+exports.logout = ( req, res ) => {
 	req.session.reset()
 	delete res.locals.user
 	res.redirect( '/' )
@@ -21,8 +23,8 @@ function invalidaEmailPassword ( req, res ) {
 	})
 }
 
-exports.postLogin = function ( req, res ) {
-	User.findOne({ email: req.body.email }, function ( err, user ) {
+exports.postLogin = ( req, res ) => {
+	User.findOne({ email: req.body.email }, ( err, user ) => {
 		if ( err ) return console.error( err )
 
 		if ( !user ) {
@@ -31,7 +33,7 @@ exports.postLogin = function ( req, res ) {
 		}
 
 		if ( bcrypt.compareSync( req.body.password, user.password ) ) {
-			var user = user.toObject()
+			let user = user.toObject()
 
 			delete user.password
 			req.session.user = user

@@ -1,4 +1,6 @@
-exports.dashboard = function ( req, res ) {
+'use strict'
+
+exports.dashboard = ( req, res ) => {
 	res.render( 'dashboard', {
 		layout: 		'admin',
 		activeLink: '/dashboard',

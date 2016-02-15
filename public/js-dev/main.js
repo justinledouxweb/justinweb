@@ -1,5 +1,5 @@
 ( function ( window, $ ) {
-	var $hamburger 				= $( '#hamburger' ),
+	let $hamburger 				= $( '#hamburger' ),
 			$sideMenu 				= $( '#side-menu' ),
 			$sideMenuCurtain 	= $( '#side-menu-curtain' )
 
@@ -21,7 +21,7 @@
 
 	$( '.form' )
 		.on( 'change', function ( e ) {
-			var $this 		= $( this ),
+			let $this 		= $( this ),
 					$target  	= $( e.target ),
 					csrf 			= $this.find( '#csrf' ).val(),
 					projectId = $this.find( '#id' ).val(),

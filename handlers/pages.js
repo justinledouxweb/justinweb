@@ -1,9 +1,11 @@
-// TODO: Move to DB when back-end portal is created
-var experiences 	= require( '../data/experiences.json' ).experiences,
-		technologies 	= require( '../data/technologies.json' ).technologies,
-		competencies 	= require( '../data/competencies.json' ).competencies
+'use strict'
 
-exports.home = function ( req, res ) {
+// TODO: Move to DB when back-end portal is created
+const experiences 	= require( '../data/experiences.json' ).experiences,
+			technologies 	= require( '../data/technologies.json' ).technologies,
+			competencies 	= require( '../data/competencies.json' ).competencies
+
+exports.home = ( req, res ) => {
 	res.render( 'home', {
 		experiences: experiences,
 

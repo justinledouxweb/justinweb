@@ -1,4 +1,6 @@
-exports.userManagement = function ( req, res ) {
+'use strict'
+
+exports.userManagement = ( req, res ) => {
 	res.render( 'user-management', {
 		layout: 		'admin',
 		activeLink: '/user-management',
