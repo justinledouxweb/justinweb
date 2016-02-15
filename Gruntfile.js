@@ -14,7 +14,7 @@ const jsSettings = {
 		files: {
 			'public/js/main.min.js': [
 				'public/js-dev/modules/file-upload.js',
-				'public/js-dev/main.js'
+				'public/js/main.js'
 			]
 		}
 	},
@@ -98,6 +98,7 @@ module.exports = function ( grunt ) {
 	grunt.registerTask( 'all', [
 		'compass',
 		'cssmin',
+		'babel',
 		'uglify'
 	])
 }
