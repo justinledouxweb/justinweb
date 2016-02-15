@@ -25,8 +25,10 @@ const jsSettings = {
 	}
 }
 
-module.exports = function ( grunt ) {
-	tasks.forEach( function ( task ) {
+module.exports = grunt => {
+	require( 'time-grunt' )( grunt )
+
+	tasks.forEach( task => {
 		grunt.loadNpmTasks( task )
 	})
 
