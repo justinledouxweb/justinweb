@@ -75,7 +75,10 @@ class Experience extends React.Component {
 
 		return (
 			<div>
-				<h2>{ experience.position } <span>// { experience.location }</span></h2>
+				<h2 className="experiences__list-title">
+					{experience.position}
+					<span className="experiences__list-location"> // { experience.location }</span>
+				</h2>
 				<p>
 					<small>{ experience.timeframe }</small>
 					{ experience.description }
