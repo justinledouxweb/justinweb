@@ -66,21 +66,17 @@
 				<p class="window__title">technologies.js</p>
 			</div>
 
-			<div class="window__content-container clearfix">
-				<div class="window__gutter">
-					<pre>
-						{{#for technologies.lineNumber}}
-							{{~ increment this 1}}
-						{{/for~}}
-					</pre>
-				</div>
-
+			<div class="window__content-container window__line-number clearfix">
 				<div class="window__content">
 					<pre><code><span class="code--blue">var</span> techs <span class="code--pink">=</span> [
 						{{#each technologies.technologies~}}
 							&nbsp;&nbsp;<span class="code--yellow">"{{ this }}"</span>,
 						{{/each~}}
-						];</code></pre>
+						];<span class="window__gutter">
+							{{~#for technologies.technologies 2 ~}}
+								<span></span>
+							{{/for~}}
+						</span></code></pre>
 				</div>
 			</div>
 		</div>
@@ -102,21 +98,17 @@
 				<p class="window__title">competencies.html</p>
 			</div>
 
-			<div class="window__content-container clearfix">
-				<div class="window__gutter">
-					<pre>
-						{{#for competencies.lineNumber}}
-							{{~ increment this 1}}
-						{{/for~}}
-					</pre>
-				</div>
-
+			<div class="window__content-container window__line-number clearfix">
 				<div class="window__content">
 					<pre><code>&lt;<span class="code--pink">ul</span>&gt;
 						{{#each competencies.competencies~}}
 							&nbsp;&nbsp;&lt;<span class="code--pink">li</span>&gt;{{ this }}&lt;/<span class="code--pink">li</span>&gt;
 						{{/each~}}
-						&lt;/<span class="code--pink">ul</span>&gt;</code></pre>
+						&lt;/<span class="code--pink">ul</span>&gt;<span class="window__gutter">
+							{{~#for competencies.competencies 2 ~}}
+								<span></span>
+							{{/for~}}
+						</span></code></pre>
 				</div>
 			</div>
 		</div>

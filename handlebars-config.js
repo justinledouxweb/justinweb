@@ -1,8 +1,10 @@
-var i18n 			= require( 'i18n' ),
-		moment 		= require( 'moment' ),
-		toolbelt 	= require( './lib/toolbelt.js' )
+'use strict'
 
-var operators = {
+const i18n 			= require( 'i18n' ),
+			moment 		= require( 'moment' ),
+			toolbelt 	= require( './lib/toolbelt.js' )
+
+const operators = {
 	'===': 	function ( l, r ) { return l === r },
 	'==': 	function ( l, r ) { return l == r },
 	'!==': 	function ( l, r ) { return l !== r },
@@ -23,10 +25,10 @@ module.exports = {
 				return index + offsetValue
 			},
 
-			for: function ( n, block ) {
-				var result = ''
+			for: function ( n, offset, block ) {
+				let result = ''
 
-				for ( var i = 0, l = n; i < l; i++ ) {
+				for ( let i = 0, l = n.length + ( offset || 0 ); i < l; i++ ) {
 					result += block.fn( i )
 				}
 
@@ -51,7 +53,7 @@ module.exports = {
 				if ( arguments.length < 3 ) throw Error( 'Handlebars Helper "compare" needs 2 parameters' )
 				if ( !operators[operator] ) throw Error( 'Handlebars Helper "compare" doesn\'t know the operator ' + operator )
 
-				var result = operators[operator]( lValue, rValue )
+				const result = operators[operator]( lValue, rValue )
 
 				if ( result ) return output
 				else return ''
@@ -67,16 +69,14 @@ module.exports = {
 				if ( arguments.length < 6 ) throw Error( 'Handlebars Helper "ifElse" needs 5 parameters' )
 				if ( !operators[operator] ) throw Error( 'Handlebars Helper "ifElse" doesn\'t know the operator ' + operator )
 
-				var result = operators[operator]( lValue, rValue )
+				const result = operators[operator]( lValue, rValue )
 
 				if ( result ) return trueOutcome
 				else return falseOutcome
 			},
 
 			ifAll: function () {
-				console.log( arguments )
-
-				var isTrue = true
+				const isTrue = true
 
 				for ( argument in arguments ) {
 					if ( argument ) isTrue &= true
@@ -86,7 +86,7 @@ module.exports = {
 			},
 
 			modulo: function ( val, divisor, options ) {
-				var fnTrue 	= options.fn,
+				const fnTrue 	= options.fn,
 						fnFalse = options.inverse
 
 				return val % divisor === 0 ? fnTrue() : fnFalse()
@@ -97,10 +97,10 @@ module.exports = {
 			},
 
 			formatTextarea: function ( array ) {
-				var cleanArray 	= [],
+				let cleanArray 	= [],
 						l 					= array.length - 1
 
-				array.forEach( function ( a, index ) {
+				array.forEach( ( a, index ) => {
 					if ( a !== '' && index !== l ) cleanArray.push( a + '\n\n' )
 					else cleanArray.push( a )
 				})
