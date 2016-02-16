@@ -97,11 +97,9 @@ app.use( ( req, res, next ) => {
 	res.locals.csrfToken 						= req.csrfToken()
 	// res.locals.flash 								= req.flash( 'flash' )[0]
 	res.locals.froalaKey 						= config.froalaLicense
-	res.locals.isProduction 				= process.env.NODE_ENV === 'production'
-		|| process.env.NODE_ENV === 'prod'
-		|| process.env.NODE_ENV === 'qsProd'
-
-	res.locals.isLoggedIn = req.session && req.session.user ? true : false
+	res.locals.isProduction 				= ENV === 'production'
+	
+	res.locals.isLoggedIn 					= req.session && req.session.user ? true : false
 
 	next()
 })
