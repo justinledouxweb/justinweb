@@ -5,6 +5,7 @@ const tasks = [
 	'grunt-contrib-cssmin',
 	'grunt-contrib-concat',
 	'grunt-contrib-copy',
+	'grunt-criticalcss',
 	'grunt-babel'
 ]
 
@@ -26,6 +27,18 @@ module.exports = grunt => {
 					outputStyle: 	'expanded',
 					force: 				true
 				},
+			}
+		},
+
+		criticalcss: {
+			custom: {
+				options: {
+					url: 				'http://localhost:3000',
+					width: 			1200,
+					height: 		900,
+					outputfile: 'public/css/critical.css',
+					filename: 	'public/css/main.min.css'
+				}
 			}
 		},
 
@@ -104,6 +117,7 @@ module.exports = grunt => {
 				tasks: [
 					'compass',
 					'cssmin',
+					'criticalcss',
 					'copy:jsLib',
 					'concat',
 					'babel'
@@ -119,6 +133,7 @@ module.exports = grunt => {
 	grunt.registerTask( 'all', [
 		'compass',
 		'cssmin',
+		'criticalcss',
 		'copy:jsLib',
 		'concat',
 		'babel',
