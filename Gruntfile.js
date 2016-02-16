@@ -106,8 +106,7 @@ module.exports = grunt => {
 					'cssmin',
 					'copy:jsLib',
 					'concat',
-					'babel',
-					// 'copy:jsLib'
+					'babel'
 				]
 			}
 		}
