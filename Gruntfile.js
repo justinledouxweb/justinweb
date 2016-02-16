@@ -1,5 +1,3 @@
-const config = require( './config.js' )[ process.env.NODE_ENV ]
-
 const tasks = [
 	'grunt-contrib-compass',
 	'grunt-contrib-watch',
@@ -9,21 +7,6 @@ const tasks = [
 	'grunt-contrib-copy',
 	'grunt-babel'
 ]
-
-const jsSettings = {
-	target: {
-		files: {
-			'public/js/main.min.js': [
-				// 'public/js-dev/modules/file-upload.js',
-				'public/js/main.min.js'
-			]
-		}
-	},
-	options: {
-		sourceMap: true,
-		separator: ';'
-	}
-}
 
 module.exports = grunt => {
 	require( 'time-grunt' )( grunt )
@@ -39,7 +22,7 @@ module.exports = grunt => {
 					sassDir: 			'public/sass',
 					cssDir: 			'public/sass/build',
 					imagesDir: 		'images',
-					httpPath: 		config.staticResourcesBaseURL,
+					httpPath: 		require( './config.js' )[ process.env.NODE_ENV ],
 					outputStyle: 	'expanded',
 					force: 				true
 				},
@@ -57,9 +40,34 @@ module.exports = grunt => {
 			}
 		},
 
-		uglify: jsSettings,
+		uglify: {
+			target: {
+				files: {
+					'public/js/main.min.js': [
+						'public/js/main.min.js'
+					]
+				}
+			},
+			options: {
+				sourceMap: true,
+				separator: ';'
+			}
+		},
 
-		concat: jsSettings,
+		concat: {
+			target: {
+				files: {
+					'public/js/main.min.js': [
+						// 'public/js-dev/modules/file-upload.js',
+						'public/js/main.min.js'
+					]
+				}
+			},
+			options: {
+				sourceMap: true,
+				separator: ';'
+			}
+		},
 
 		copy: {
 			jsLib: {
@@ -97,8 +105,8 @@ module.exports = grunt => {
 					'compass',
 					'cssmin',
 					'copy:jsLib',
+					'concat',
 					'babel',
-					// 'concat',
 					// 'copy:jsLib'
 				]
 			}
@@ -113,6 +121,7 @@ module.exports = grunt => {
 		'compass',
 		'cssmin',
 		'copy:jsLib',
+		'concat',
 		'babel',
 		'uglify'
 	])
