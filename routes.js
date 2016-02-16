@@ -5,16 +5,17 @@ var pages 					= require( './handlers/pages.js' ),
 		admin 					= require( './handlers/admin.js' ),
 		login 					= require( './handlers/login.js' ),
 		projects 				= require( './handlers/projects.js' ),
-		userManagement 	= require( './handlers/user-management.js' )
+		userManagement 	= require( './handlers/user-management.js' ),
+		temp 						= require( './handlers/temp-projects.js' )
 
 module.exports = function ( app ) {
 	// MAIN PAGES
 	app.get( '/', 			pages.home )
 
 	// ADMIN ROUTES
-	// app.get( '/login', 	login.login )
-	// app.get( '/logout', login.logout )
-	// app.post( '/login', login.postLogin )
+	app.get( '/login', 	login.login )
+	app.get( '/logout', login.logout )
+	app.post( '/login', login.postLogin )
 
 	// app.get( '/dashboard', requireLogin.login, admin.dashboard )
 
@@ -24,4 +25,9 @@ module.exports = function ( app ) {
 	// app.patch( '/projects/new', requireLogin.login, auth.isAdmin, projects.patchProject )
 
 	// app.get( '/user-management', 	requireLogin.login, auth.isAdmin, userManagement.userManagement )
+
+	app.get( '/projects', requireLogin.login, temp.projects )
+	app.get( '/projects/compass-offline', requireLogin.login, temp.compass )
+	// app.get( '/projects/data/charts.json', requireLogin.login, temp.compassData )
+	app.get( '/projects/:page', requireLogin.login, temp.compassPages )
 }
