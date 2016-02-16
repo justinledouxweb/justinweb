@@ -75,9 +75,14 @@
 
 	{{{_sections.scriptPre}}}
 
-	<!--[if !IE 8]><!-->
-	<script type="text/javascript" src="{{ jqueryPath }}"></script>
-	<!--<![endif]-->
+	{{!--
+		<!--[if !IE 8]><!-->
+		<script type="text/javascript" src="{{ jqueryPath }}"></script>
+		<!--<![endif]-->
+		<script type="text/javascript" src="{{ staticResourcesPath }}js/main.min.js"></script>
+	--}}
+	<script type="text/javascript" src="{{ staticResourcesPath }}js/lib/react.min.js"></script>
+	<script type="text/javascript" src="{{ staticResourcesPath }}js/lib/react-dom.min.js"></script>
 	<script type="text/javascript" src="{{ staticResourcesPath }}js/main.min.js"></script>
 
 	{{{_sections.scriptPost}}}

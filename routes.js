@@ -10,7 +10,7 @@ var pages 					= require( './handlers/pages.js' ),
 
 module.exports = function ( app ) {
 	// MAIN PAGES
-	app.get( '/', 			pages.home )
+	app.get( '/', pages.home )
 
 	// ADMIN ROUTES
 	app.get( '/login', 	login.login )

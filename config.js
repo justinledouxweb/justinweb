@@ -4,7 +4,7 @@ module.exports = {
 	local: {
 		baseURL: 								'http://localhost:' + process.env.PORT + '/',
 		staticResourcesBaseURL: '/',
-		jQuery: 								'/js-dev/lib/jquery-2.2.0.min.js',
+		jQuery: 								'/js-dev/lib/jquery-3.0.0.min.js',
 		IE8jQuery: 							'/js-dev/lib/jquery-1.11.3.js',
 		mongodb: {
 			options: {
@@ -24,7 +24,7 @@ module.exports = {
 	staging: {
 		baseURL: 								'http://justinweb.heroku.com/',
 		staticResourcesBaseURL: '/',
-		jQuery: 								'/js-dev/lib/jquery-2.2.0.min.js',
+		jQuery: 								'/js-dev/lib/jquery-3.0.0.min.js',
 		IE8jQuery: 							'/js-dev/lib/jquery-1.11.3.js',
 		mongodb: {
 			options: {
@@ -39,7 +39,7 @@ module.exports = {
 	production: {
 		baseURL: 								'http://www.justinweb.pro/',
 		staticResourcesBaseURL: '/',
-		jQuery: 								'/js-dev/lib/jquery-2.2.0.min.js',
+		jQuery: 								'/js-dev/lib/jquery-3.0.0.min.js',
 		IE8jQuery: 							'/js-dev/lib/jquery-1.11.3.js',
 		mongodb: {
 			options: {

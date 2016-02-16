@@ -1,26 +1,28 @@
-var express 					= require( 'express' ),
-		app 							= express(),
-		server						=	require( './server.js' ),
-		bodyParser 				= require( 'body-parser' ),
-		csurf 						= require( 'csurf' ),
-		handlebars 				= require( 'express-handlebars' ),
-		handlebarsConfig 	= require( './handlebars-config.js' ),
-		cookieParser 			= require( 'cookie-parser' ),
-		session 					= require( 'client-sessions' ),
-		mongoose 					= require( 'mongoose' ),
-		// i18n 							= require( 'i18n' ),
-		formidable 				= require( 'formidable' ),
-		flash 						= require( 'connect-flash' ),
-		config 						= require( './config.js' )[ process.env.NODE_ENV ],
-		favicon 					= require( 'serve-favicon' )
+'use strict'
 
-var environment = process.env.NODE_ENV
+const express 					= require( 'express' ),
+			app 							= express(),
+			server						=	require( './server.js' ),
+			bodyParser 				= require( 'body-parser' ),
+			csurf 						= require( 'csurf' ),
+			handlebars 				= require( 'express-handlebars' ),
+			handlebarsConfig 	= require( './handlebars-config.js' ),
+			cookieParser 			= require( 'cookie-parser' ),
+			session 					= require( 'client-sessions' ),
+			mongoose 					= require( 'mongoose' ),
+			// i18n 							= require( 'i18n' ),
+			formidable 				= require( 'formidable' ),
+			flash 						= require( 'connect-flash' ),
+			config 						= require( './config.js' )[ process.env.NODE_ENV ],
+			favicon 					= require( 'serve-favicon' )
+
+const environment = process.env.NODE_ENV
 
 mongoose.connect(
 	config.mongodb.connectionString,
 	config.mongodb.options )
 
-mongoose.connection.on( 'error', function ( err ) {
+mongoose.connection.on( 'error', err => {
 	console.error( 'MongoDB is not running. Please launch MongoDB before continuing.' )
 	return
 })
@@ -30,7 +32,7 @@ mongoose.connection.on( 'error', function ( err ) {
 // 	cookie: 	'i18n'
 // })
 
-var hdb = handlebars.create( handlebarsConfig.handlebars )
+const hdb = handlebars.create( handlebarsConfig.handlebars )
 app.engine( 'handlebars', hdb.engine )
 app.set( 'view engine', 'handlebars' )
 app.set( 'view options', {
@@ -58,14 +60,14 @@ app.use( session({
 	secure: true, // only use coockies over https
 }))
 app.use( flash() )
-app.use( function ( req, res, next ) {
-	var regex = new RegExp( 'multipart/form-data' )
+app.use( ( req, res, next ) => {
+	const regex = new RegExp( 'multipart/form-data' )
 
 	if ( regex.test( req.headers[ 'content-type' ] ) ) {
-		var form = new formidable.IncomingForm()
+		let form = new formidable.IncomingForm()
 
 		form.multiples = true
-		form.parse( req, function ( err, fields, files ) {
+		form.parse( req, ( err, fields, files ) => {
 			if ( err ) return console.error( err )
 
 	    req.files = files
@@ -80,10 +82,10 @@ app.use( function ( req, res, next ) {
 })
 
 app.use( csurf() )
-app.use( express.static( __dirname + '/public/' ) )
-app.use( favicon( __dirname + '/public/favicon.ico' ) )
+app.use( express.static( `${__dirname}/public/` ) )
+app.use( favicon( `${__dirname}/public/favicon.ico` ) )
 
-app.use( function ( req, res, next ) {
+app.use( ( req, res, next ) => {
 	res.locals.baseURL 							= config.baseURL
 	res.locals.staticResourcesPath 	= config.staticResourcesBaseURL
 	// res.locals.uploadedFilePath 		= config.uploadBaseURL
@@ -105,9 +107,9 @@ app.use( function ( req, res, next ) {
 // routes
 require( './routes.js' )( app )
 
-app.use( function ( err, req, res, next ) {
+app.use( ( err, req, res, next ) => {
 	// log errors
-	var error = null
+	let error = null
 
 	if ( environment === 'development' || environment === 'local' ) {
 		error = err
@@ -120,12 +122,12 @@ app.use( function ( err, req, res, next ) {
 
 	res.status( err.status || 500 )
 	res.render( '500', {
-		message: err.message,
-		error: error
+		message: 	err.message,
+		error: 		error
 	})
 })
 
-app.use( function ( req, res, next ) {
+app.use( ( req, res, next ) => {
   res.status( 404 )
   res.render( '404' )
 })

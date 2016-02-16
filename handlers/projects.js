@@ -1,3 +1,5 @@
+'use strict'
+
 // var Project = require( '../models/project.js' )
 
 // var async = require( 'async' ),
@@ -8,7 +10,7 @@
 // var s3 					= new aws.S3(),
 // 		bucketName 	= 'justinweb'
 
-exports.projects = function ( req, res ) {
+exports.projects = ( req, res ) => {
 	res.render( 'projects', {
 		layout: 		'admin',
 		activeLink: '/projects',

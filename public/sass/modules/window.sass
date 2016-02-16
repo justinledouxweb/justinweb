@@ -41,20 +41,42 @@
 	color: white
 	min-height: 200px
 	background-color: $light-black
+	overflow: auto
 	padding: 20px
 
+	&.window__line-number
+		.window__content
+			padding-left: 40px
+
+		.window__gutter
+			position: absolute
+			display: block
+			top: 0
+			left: -40px
+			text-align: right
+			width: 20px
+			margin-right: 20px
+			pointer-events: none
+			float: left
+			@include opacity( .5 )
+			@include user-select( none )
+
+			span
+				counter-increment: linenumber
+
+				&:before
+					content: counter( linenumber )
 	.window__gutter
 		text-align: right
 		width: 20px
 		margin-right: 20px
 		float: left
 		@include opacity( .5 )
-
+		
 	.window__content
 		pre
 			position: relative
 			padding-left: 10px
-			overflow: auto
 			direction: ltr
 			text-align: left
 			white-space: pre
@@ -62,6 +84,7 @@
 			word-break: normal
 			word-wrap: normal
 			tab-size: 4
+			counter-reset: linenumber
 			-webkit-overflow-scrolling: touch
 
 			code

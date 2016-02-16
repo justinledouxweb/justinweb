@@ -1,56 +1,15 @@
 @import "common"
 
-@include keyframe( fade-in )
+@include keyframe ( fadeIn )
 	from
 		@include opacity( 0 )
 
 	to
 		@include opacity( 1 )
 
-@include keyframe( slide-down )
+@include keyframe ( slideUp )
 	from
-		@include transform( translate3d( 0, -100%, 0 ) )
+		@include transform( translateY( 100% ) )
 
 	to
-		@include transform( translate3d( 0, 0, 0 ) )
-
-@include keyframe( slide-down-nav )
-	from
-		@include transform( translate3d( 0, -150%, 0 ) )
-
-	to
-		@include transform( translate3d( 0, 0, 0 ) )
-
-@include keyframe( slide-up )
-	from
-		@include opacity( 0 )
-		@include transform( translate3d( 0, 50%, 0 ) )
-
-	to
-		@include opacity( 1 )
-		@include transform( translate3d( 0, 0, 0 ) )
-
-@include keyframe( slide-up-iphone )
-	from
-		@include opacity( 0 )
-		@include transform( translate3d( 0, 100%, 0 ) )
-
-	to
-		@include opacity( 1 )
-		@include transform( translate3d( 0, 0, 0 ) )
-
-@include keyframe( slide-up-sections )
-	from
-		@include opacity( 0 )
-		@include transform( translate3d( 0, 300px, 0 ) )
-
-	to
-		@include opacity( 1 )
-		@include transform( translate3d( 0, 0, 0 ) )
-
-@include keyframe( spin )
-	from
-		@include transform( rotate( 0deg ) )
-
-	to
-		@include transform( rotate( 360deg ) )
+		@include transform( translateY( 0 ) )

@@ -1,24 +1,20 @@
+'use strict'
+
 // TODO: Move to DB when back-end portal is created
-var experiences 	= require( '../data/experiences.json' ).experiences,
-		technologies 	= require( '../data/technologies.json' ).technologies,
-		competencies 	= require( '../data/competencies.json' ).competencies
+const experiences 	= require( '../data/experiences.json' ).experiences,
+			technologies 	= require( '../data/technologies.json' ).technologies,
+			competencies 	= require( '../data/competencies.json' ).competencies
 
-exports.home = function ( req, res ) {
+exports.home = ( req, res ) => {
 	res.render( 'home', {
-		experiences: experiences,
-
-		// TODO: not clean, perhaps move the lineNumber logic to a
-		// custom handlebars helper...
-		technologies: {
+		localData: JSON.stringify({
+			experiences: experiences,
 			technologies: technologies,
-			lineNumber: technologies.length + 2,
-		},
+			competencies: competencies
+		}),
 
-		// TODO: not clean, perhaps move the lineNumber logic to a
-		// custom handlebars helper...
-		competencies: {
-			competencies: competencies,
-			lineNumber: competencies.length + 2
-		}
+		experiences: experiences,
+		technologies: technologies,
+		competencies: competencies,
 	})
 }
