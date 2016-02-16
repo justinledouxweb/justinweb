@@ -8,12 +8,8 @@ const experiences 	= require( '../data/experiences.json' ).experiences,
 exports.home = ( req, res ) => {
 	res.render( 'home', {
 		localData: JSON.stringify({
-			experiences: experiences,
-			technologies: technologies,
-			competencies: competencies
+			experiences: experiences
 		}),
-
-		experiences: experiences,
 		technologies: technologies,
 		competencies: competencies,
 	})
