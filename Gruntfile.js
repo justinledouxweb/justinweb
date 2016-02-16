@@ -33,7 +33,7 @@ module.exports = grunt => {
 		criticalcss: {
 			custom: {
 				options: {
-					url: 				'http://localhost:3000',
+					url: 				'http://www.justinweb.pro',
 					width: 			1200,
 					height: 		900,
 					outputfile: 'public/css/critical.css',
