@@ -1,11 +1,11 @@
 {
 	"technologies": [
+		"ES2015 JavaScript",
 		"Node.JS",
 		"Express",
 		"MongoDB",
 		"Heroku",
 		"Grunt",
-		"JavaScript",
 		"HTML5",
 		"CSS3",
 		"jQuery",

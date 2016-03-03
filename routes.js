@@ -15,6 +15,7 @@ let pages 					= require( './handlers/pages.js' ),
 module.exports = app => {
 	// MAIN PAGES
 	app.get( '/', pages.home )
+	app.get( '/download/cv', pages.downloadCV )
 
 	// ADMIN ROUTES
 	// app.get( '/login', 	login.login )
