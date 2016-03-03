@@ -1,4 +1,8 @@
-const tasks = [
+'use strict'
+
+let config = require( './config.js' )[ process.env.NODE_ENV ]
+
+let tasks = [
 	'grunt-contrib-compass',
 	'grunt-contrib-watch',
 	'grunt-contrib-uglify',
@@ -23,7 +27,7 @@ module.exports = grunt => {
 					sassDir: 			'public/sass',
 					cssDir: 			'public/sass/build',
 					imagesDir: 		'images',
-					httpPath: 		require( './config.js' )[ process.env.NODE_ENV ],
+					httpPath: 		config.staticResourcesBaseURL,
 					outputStyle: 	'expanded',
 					force: 				true
 				},
