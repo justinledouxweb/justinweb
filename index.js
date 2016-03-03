@@ -86,7 +86,7 @@ app.use( ( req, res, next ) => {
 
 app.use( csurf() )
 app.use( compression() )
-app.use( express.static( `${__dirname}/public/`, { maxage: 2629746000, etag: true } ) )
+app.use( express.static( `${__dirname}/public/`, config.staticResourceCache ) )
 app.use( favicon( `${__dirname}/public/favicon.ico` ) )
 
 app.use( ( req, res, next ) => {
