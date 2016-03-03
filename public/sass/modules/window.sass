@@ -37,7 +37,7 @@
 		margin-bottom: 0
 
 .window__content-container
-	font-family: Menlo, Courier,  monospace
+	font-family: Menlo, Courier, monospace
 	color: white
 	min-height: 200px
 	background-color: $light-black
@@ -66,6 +66,7 @@
 
 				&:before
 					content: counter( linenumber )
+
 	.window__gutter
 		text-align: right
 		width: 20px
@@ -96,11 +97,20 @@
 				word-wrap: normal
 				tab-size: 4
 
-@media (max-width: 767px)
-	.hero
-		.window__content-container
-			min-height: 150px
-			margin-bottom: -70px
+				a
+					color: white
+
+					&:hover
+						text-decoration: underline
+
+.hero
+	.window__content-container
+		line-height: 1.6
+
+	.window__gutter
+		span
+			&:before
+				content: "$"
 
 .code--blue
 	color: #70cde5
@@ -110,6 +120,9 @@
 
 .code--yellow
 	color: #e6db73
+
+.code--green
+	color: #3AB331
 
 .window__cursor
 	color: white
@@ -126,19 +139,29 @@
 		@include opacity( 1 )
 
 @media (max-width: 767px)
+	.window__title-bar
+		.window__controls
+			span
+				width: 12px
+				height: 12px
+			
 	.window__content-container
-		.window__gutter,
-		.window__content
-			font-size: $size-16
-
-@media (max-width: 768px)
-	.window__content-container
+		min-height: 100px
 		padding: 15px
 
 		.window__gutter,
 		.window__content
-			font-size: $size-12
+			font-size: $size-14
 
 		.window__gutter
+			font-size: 1em
 			width: 15px
 			margin-right: 5px
+
+	.hero
+		.window__content-container
+			min-height: 150px
+			margin-bottom: -70px
+
+		.window__gutter
+			font-size: $size-14

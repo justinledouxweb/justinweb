@@ -40,6 +40,7 @@
     "grunt-contrib-cssmin": "^0.14.0",
     "grunt-contrib-uglify": "^0.11.0",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-criticalcss": "^1.0.2",
     "grunt-mocha-test": "^0.12.7",
     "i18n": "^0.5.0",
     "image-size": "^0.4.0",

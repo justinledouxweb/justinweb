@@ -14,7 +14,9 @@ const express 					= require( 'express' ),
 			formidable 				= require( 'formidable' ),
 			flash 						= require( 'connect-flash' ),
 			config 						= require( './config.js' )[ process.env.NODE_ENV ],
-			favicon 					= require( 'serve-favicon' )
+			favicon 					= require( 'serve-favicon' ),
+			fs 								= require( 'fs' ),
+			criticalCss 			= fs.readFileSync( './public/css/critical.css', 'utf8' )
 
 const environment = process.env.NODE_ENV
 
@@ -90,16 +92,15 @@ app.use( ( req, res, next ) => {
 	res.locals.staticResourcesPath 	= config.staticResourcesBaseURL
 	// res.locals.uploadedFilePath 		= config.uploadBaseURL
 	res.locals.jqueryPath 					= config.jQuery
-	res.locals.jqueryPathIE8 				= config.IE8jQuery
-	res.locals.jqueryUIPath 				= config.jqueryUIPath
+	// res.locals.jqueryPathIE8 				= config.IE8jQuery
+	// res.locals.jqueryUIPath 				= config.jqueryUIPath
 	res.locals.csrfToken 						= req.csrfToken()
+	res.locals.criticalCss 					= criticalCss
 	// res.locals.flash 								= req.flash( 'flash' )[0]
-	res.locals.froalaKey 						= config.froalaLicense
+	// res.locals.froalaKey 						= config.froalaLicense
 	res.locals.isProduction 				= process.env.NODE_ENV === 'production'
-		|| process.env.NODE_ENV === 'prod'
-		|| process.env.NODE_ENV === 'qsProd'
 
-	res.locals.isLoggedIn = req.session && req.session.user ? true : false
+	// res.locals.isLoggedIn = req.session && req.session.user ? true : false
 
 	next()
 })
