@@ -1,5 +1,3 @@
-const config = require( './config.js' )[ process.env.NODE_ENV ]
-
 const tasks = [
 	'grunt-contrib-compass',
 	'grunt-contrib-watch',
@@ -10,21 +8,6 @@ const tasks = [
 	'grunt-criticalcss',
 	'grunt-babel'
 ]
-
-const jsSettings = {
-	target: {
-		files: {
-			'public/js/main.min.js': [
-				// 'public/js-dev/modules/file-upload.js',
-				'public/js/main.min.js'
-			]
-		}
-	},
-	options: {
-		sourceMap: true,
-		separator: ';'
-	}
-}
 
 module.exports = grunt => {
 	require( 'time-grunt' )( grunt )
@@ -40,10 +23,22 @@ module.exports = grunt => {
 					sassDir: 			'public/sass',
 					cssDir: 			'public/sass/build',
 					imagesDir: 		'images',
-					httpPath: 		config.staticResourcesBaseURL,
+					httpPath: 		require( './config.js' )[ process.env.NODE_ENV ],
 					outputStyle: 	'expanded',
 					force: 				true
 				},
+			}
+		},
+
+		criticalcss: {
+			custom: {
+				options: {
+					url: 				'http://localhost:3000',
+					width: 			1200,
+					height: 		900,
+					outputfile: 'public/css/critical.css',
+					filename: 	'public/css/main.min.css'
+				}
 			}
 		},
 
@@ -58,9 +53,34 @@ module.exports = grunt => {
 			}
 		},
 
-		uglify: jsSettings,
+		uglify: {
+			target: {
+				files: {
+					'public/js/main.min.js': [
+						'public/js/main.min.js'
+					]
+				}
+			},
+			options: {
+				sourceMap: true,
+				separator: ';'
+			}
+		},
 
-		concat: jsSettings,
+		concat: {
+			target: {
+				files: {
+					'public/js/main.min.js': [
+						// 'public/js-dev/modules/file-upload.js',
+						'public/js/main.min.js'
+					]
+				}
+			},
+			options: {
+				sourceMap: true,
+				separator: ';'
+			}
+		},
 
 		copy: {
 			jsLib: {
@@ -111,9 +131,8 @@ module.exports = grunt => {
 					'cssmin',
 					'criticalcss',
 					'copy:jsLib',
-					'babel',
-					// 'concat',
-					// 'copy:jsLib'
+					'concat',
+					'babel'
 				]
 			}
 		}
@@ -128,6 +147,7 @@ module.exports = grunt => {
 		'cssmin',
 		'criticalcss',
 		'copy:jsLib',
+		'concat',
 		'babel',
 		'uglify'
 	])

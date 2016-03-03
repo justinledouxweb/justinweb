@@ -1,5 +1,7 @@
 'use strict'
 
+const ENV = process.env.NODE_ENV
+
 const express 					= require( 'express' ),
 			app 							= express(),
 			server						=	require( './server.js' ),
@@ -10,24 +12,23 @@ const express 					= require( 'express' ),
 			cookieParser 			= require( 'cookie-parser' ),
 			session 					= require( 'client-sessions' ),
 			mongoose 					= require( 'mongoose' ),
+			compression 			= require( 'compression' ),
 			// i18n 							= require( 'i18n' ),
 			formidable 				= require( 'formidable' ),
 			flash 						= require( 'connect-flash' ),
-			config 						= require( './config.js' )[ process.env.NODE_ENV ],
+			config 						= require( './config.js' )[ ENV ],
 			favicon 					= require( 'serve-favicon' ),
 			fs 								= require( 'fs' ),
 			criticalCss 			= fs.readFileSync( './public/css/critical.css', 'utf8' )
 
-const environment = process.env.NODE_ENV
+// mongoose.connect(
+// 	config.mongodb.connectionString,
+// 	config.mongodb.options )
 
-mongoose.connect(
-	config.mongodb.connectionString,
-	config.mongodb.options )
-
-mongoose.connection.on( 'error', err => {
-	console.error( 'MongoDB is not running. Please launch MongoDB before continuing.' )
-	return
-})
+// mongoose.connection.on( 'error', err => {
+// 	console.error( 'MongoDB is not running. Please launch MongoDB before continuing.' )
+// 	return
+// })
 
 // i18n.configure({
 // 	locales: 	[ 'en', 'fr' ],
@@ -84,7 +85,8 @@ app.use( ( req, res, next ) => {
 })
 
 app.use( csurf() )
-app.use( express.static( `${__dirname}/public/` ) )
+app.use( compression() )
+app.use( express.static( `${__dirname}/public/`, { maxage: 2629746000, etag: true } ) )
 app.use( favicon( `${__dirname}/public/favicon.ico` ) )
 
 app.use( ( req, res, next ) => {
@@ -100,8 +102,6 @@ app.use( ( req, res, next ) => {
 	// res.locals.froalaKey 						= config.froalaLicense
 	res.locals.isProduction 				= process.env.NODE_ENV === 'production'
 
-	// res.locals.isLoggedIn = req.session && req.session.user ? true : false
-
 	next()
 })
 
@@ -112,7 +112,7 @@ app.use( ( err, req, res, next ) => {
 	// log errors
 	let error = null
 
-	if ( environment === 'development' || environment === 'local' ) {
+	if ( ENV === 'development' || ENV === 'local' ) {
 		error = err
 
 		console.error( err )
