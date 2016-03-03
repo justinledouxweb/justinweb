@@ -5,15 +5,15 @@
 @import "lib/bootstrap-3.3.5"
 
 @import "modules/window"
-@import "modules/forms"
-@import "modules/buttons"
-@import "modules/nav-bar"
-@import "modules/side-menu"
-@import "modules/list"
-@import "modules/curtain"
-@import "modules/layout"
-@import "modules/toolbar"
-@import "modules/dropzone"
+// @import "modules/forms"
+// @import "modules/buttons"
+// @import "modules/nav-bar"
+// @import "modules/side-menu"
+// @import "modules/list"
+// @import "modules/curtain"
+// @import "modules/layout"
+// @import "modules/toolbar"
+// @import "modules/dropzone"
 
 .header
 	color: white
@@ -85,8 +85,13 @@
 
 			&:hover
 				text-decoration: none
-
+				
 .experiences__list
+	div
+		&:last-child
+			p
+				margin-bottom: 0
+
 	.experiences__list-title
 		font-size: $size-20
 		font-weight: 600

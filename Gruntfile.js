@@ -105,6 +105,18 @@ module.exports = grunt => {
 			}
 		},
 
+		criticalcss: {
+			main: {
+				options: {
+					url: 				config.baseURL,
+					width: 			1200,
+					height: 		900,
+					outputfile: 'public/css/critical.css',
+					filename: 	'public/css/main.min.css'
+				}
+			}
+		},
+
 		watch: {
 			staticFiles: {
 				files: [

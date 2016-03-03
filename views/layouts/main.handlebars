@@ -22,6 +22,8 @@
 
 	<title>Justin Web</title>
 
+	<style type="text/css">{{ criticalCSS }}</style>
+
 	<link rel="apple-touch-icon" sizes="76x76" href="{{ staticResourcesPath }}images/social/apple-touch-icon-76x76.png">
 	<link rel="apple-touch-icon" sizes="120x120" href="{{ staticResourcesPath }}images/social/apple-touch-icon-120x120.png">
 	<link rel="apple-touch-icon" sizes="152x152" href="{{ staticResourcesPath }}images/social/apple-touch-icon-152x152.png">
@@ -44,8 +46,6 @@
 	<meta name="msapplication-wide310x150logo" content="{{ staticResourcesPath }}images/social/wide.png"/>
 	<meta name="msapplication-square310x310logo" content="{{ staticResourcesPath }}images/social/large.png"/>
 	<meta name="msapplication-config" content="{{ staticResourcesPath }}images/social/browserconfig.xml">
-
-	<style type="text/css">{{{criticalCss}}}</style>
 </head>
 
 <body>
@@ -68,19 +68,8 @@
 
 	{{{_sections.scriptPre}}}
 
-	{{!--
-		<!--[if !IE 8]><!-->
-		<script type="text/javascript" src="{{ jqueryPath }}"></script>
-		<!--<![endif]-->
-		<script type="text/javascript" src="{{ staticResourcesPath }}js/main.min.js"></script>
-	--}}
-	{{#if isProduction}}
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react.min.js"></script>
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-dom.min.js"></script>
-	{{else}}
-		<script type="text/javascript" src="{{ staticResourcesPath }}js/lib/react.js"></script>
-		<script type="text/javascript" src="{{ staticResourcesPath }}js/lib/react-dom.js"></script>
-	{{/if}}
+	<script type="text/javascript" src="{{ staticResourcesPath }}js/lib/react.min.js"></script>
+	<script type="text/javascript" src="{{ staticResourcesPath }}js/lib/react-dom.min.js"></script>
 	<script type="text/javascript" src="{{ staticResourcesPath }}js/main.min.js"></script>
 
 	{{{_sections.scriptPost}}}

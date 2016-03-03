@@ -17,7 +17,9 @@ const express 					= require( 'express' ),
 			formidable 				= require( 'formidable' ),
 			flash 						= require( 'connect-flash' ),
 			config 						= require( './config.js' )[ ENV ],
-			favicon 					= require( 'serve-favicon' )
+			favicon 					= require( 'serve-favicon' ),
+			fs 								= require( 'fs' ),
+			criticalCss 			= fs.readFileSync( './public/css/critical.css', 'utf8' )
 
 // mongoose.connect(
 // 	config.mongodb.connectionString,
@@ -84,7 +86,7 @@ app.use( ( req, res, next ) => {
 
 app.use( csurf() )
 app.use( compression() )
-app.use( express.static( `${__dirname}/public/`, { maxage: 2629746000, etag: true } ) )
+app.use( express.static( `${__dirname}/public/`, config.staticResourceCache ) )
 app.use( favicon( `${__dirname}/public/favicon.ico` ) )
 
 app.use( ( req, res, next ) => {
@@ -92,14 +94,13 @@ app.use( ( req, res, next ) => {
 	res.locals.staticResourcesPath 	= config.staticResourcesBaseURL
 	// res.locals.uploadedFilePath 		= config.uploadBaseURL
 	res.locals.jqueryPath 					= config.jQuery
-	res.locals.jqueryPathIE8 				= config.IE8jQuery
-	res.locals.jqueryUIPath 				= config.jqueryUIPath
+	// res.locals.jqueryPathIE8 				= config.IE8jQuery
+	// res.locals.jqueryUIPath 				= config.jqueryUIPath
 	res.locals.csrfToken 						= req.csrfToken()
+	res.locals.criticalCss 					= criticalCss
 	// res.locals.flash 								= req.flash( 'flash' )[0]
-	res.locals.froalaKey 						= config.froalaLicense
-	res.locals.isProduction 				= ENV === 'production'
-	
-	res.locals.isLoggedIn 					= req.session && req.session.user ? true : false
+	// res.locals.froalaKey 						= config.froalaLicense
+	res.locals.isProduction 				= process.env.NODE_ENV === 'production'
 
 	next()
 })
