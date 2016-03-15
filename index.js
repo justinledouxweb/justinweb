@@ -1,25 +1,25 @@
 'use strict'
 
-const ENV = process.env.NODE_ENV
+let ENV = process.env.NODE_ENV
 
-const express 					= require( 'express' ),
-			app 							= express(),
-			server						=	require( './server.js' ),
-			bodyParser 				= require( 'body-parser' ),
-			csurf 						= require( 'csurf' ),
-			handlebars 				= require( 'express-handlebars' ),
-			handlebarsConfig 	= require( './handlebars-config.js' ),
-			cookieParser 			= require( 'cookie-parser' ),
-			session 					= require( 'client-sessions' ),
-			mongoose 					= require( 'mongoose' ),
-			compression 			= require( 'compression' ),
-			// i18n 							= require( 'i18n' ),
-			formidable 				= require( 'formidable' ),
-			flash 						= require( 'connect-flash' ),
-			config 						= require( './config.js' )[ ENV ],
-			favicon 					= require( 'serve-favicon' ),
-			fs 								= require( 'fs' ),
-			criticalCss 			= fs.readFileSync( './public/css/critical.css', 'utf8' )
+let express 					= require( 'express' ),
+		app 							= express(),
+		server						=	require( './server.js' ),
+		bodyParser 				= require( 'body-parser' ),
+		csurf 						= require( 'csurf' ),
+		handlebars 				= require( 'express-handlebars' ),
+		handlebarsConfig 	= require( './handlebars-config.js' ),
+		cookieParser 			= require( 'cookie-parser' ),
+		session 					= require( 'client-sessions' ),
+		mongoose 					= require( 'mongoose' ),
+		compression 			= require( 'compression' ),
+		// i18n 							= require( 'i18n' ),
+		formidable 				= require( 'formidable' ),
+		flash 						= require( 'connect-flash' ),
+		config 						= require( './config.js' )[ ENV ],
+		favicon 					= require( 'serve-favicon' ),
+		fs 								= require( 'fs' ),
+		criticalCss 			= fs.readFileSync( './public/css/critical.css', 'utf8' )
 
 // mongoose.connect(
 // 	config.mongodb.connectionString,
@@ -35,7 +35,7 @@ const express 					= require( 'express' ),
 // 	cookie: 	'i18n'
 // })
 
-const hdb = handlebars.create( handlebarsConfig.handlebars )
+let hdb = handlebars.create( handlebarsConfig.handlebars )
 app.engine( 'handlebars', hdb.engine )
 app.set( 'view engine', 'handlebars' )
 app.set( 'view options', {
@@ -43,7 +43,7 @@ app.set( 'view options', {
 })
 
 // App setup environment port
-app.set( 'port', process.env.PORT || 5000 )
+app.set( 'port', process.env.PORT )
 app.enable( 'trust proxy' )
 // app.use( i18n.init )
 app.use( bodyParser.urlencoded({ extended: true }) )
@@ -64,7 +64,7 @@ app.use( session({
 }))
 app.use( flash() )
 app.use( ( req, res, next ) => {
-	const regex = new RegExp( 'multipart/form-data' )
+	let regex = new RegExp( 'multipart/form-data' )
 
 	if ( regex.test( req.headers[ 'content-type' ] ) ) {
 		let form = new formidable.IncomingForm()
@@ -89,13 +89,11 @@ app.use( compression() )
 app.use( express.static( `${__dirname}/public/`, config.staticResourceCache ) )
 app.use( favicon( `${__dirname}/public/favicon.ico` ) )
 
-app.use( ( req, res, next ) => {
+app.use( function formidableMiddleware ( req, res, next ) {
 	res.locals.baseURL 							= config.baseURL
 	res.locals.staticResourcesPath 	= config.staticResourcesBaseURL
 	// res.locals.uploadedFilePath 		= config.uploadBaseURL
 	res.locals.jqueryPath 					= config.jQuery
-	// res.locals.jqueryPathIE8 				= config.IE8jQuery
-	// res.locals.jqueryUIPath 				= config.jqueryUIPath
 	res.locals.csrfToken 						= req.csrfToken()
 	res.locals.criticalCss 					= criticalCss
 	// res.locals.flash 								= req.flash( 'flash' )[0]
@@ -108,38 +106,28 @@ app.use( ( req, res, next ) => {
 // routes
 require( './routes.js' )( app )
 
-app.use( ( err, req, res, next ) => {
-	// log errors
-	let error = null
-
-	if ( ENV === 'development' || ENV === 'local' ) {
-		error = err
-
-		console.error( err )
-		console.error( err.name )
-		console.error( err.message )
-		console.error( err.stack )
-	}
-
-	res.status( err.status || 500 )
-	res.render( '500', {
-		message: 	err.message,
-		error: 		error
-	})
+app.use( function logErrors ( err, req, res, next ) {
+	console.error( err.stack )
+	next( err )
 })
 
-app.use( ( req, res, next ) => {
+app.use( function clientErrorHandler ( err, req, res, next ) {
+	if ( req.xhr ) res.status( 500 ).json({ error: err.stack })
+	else next( err )
+})
+
+app.use( function errorHandler ( err, req, res, next ) {
+	res.status( 500 )
+	res.render( '500' )
+})
+
+app.use( function fourOfour ( req, res, next ) {
   res.status( 404 )
   res.render( '404' )
 })
 
 // start the server in cluster
-if ( require.main === module ) {
-	server( app )
-}
-
-else {
-	module.exports = server( app )
-}
+if ( require.main === module ) server( app )
+else module.exports = server( app )
 
 module.exports = app
