@@ -1,0 +1,42 @@
+@import "../../styles/_common"
+
+.nav-bar
+	position: fixed
+	display: block
+	width: 100%
+	text-align: right
+	top: 0
+	left: 0
+	border-bottom: 1px solid rgba( 0, 0, 0, .1 )
+	background-color: $primary-color
+	padding: 10px 15px
+	z-index: 10
+
+.nav-bar__language
+	font-size: $size-14
+	color: white
+	cursor: pointer
+
+.hamburger
+	display: inline-block
+	font-weight: 300
+	color: rgba( 255, 255, 255, .5 )
+	margin-right: 10px
+	@include transition( color .2s ease-in-out )
+
+	&:before
+		position: relative
+		display: inline-block
+		content: ""
+		width: 27px
+		height: 19px
+		bottom: -3px
+		background: image-url( 'hamburger.svg' ) no-repeat 0 0
+		margin-right: 15px
+
+	&:hover
+		color: rgba( 255, 255, 255, 1 )
+
+.customer-login
+	display: inline-block
+	margin-right: 10px

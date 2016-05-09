@@ -1,0 +1,19 @@
+<section class="section experiences">
+	<div class="container">
+		<h1 class="section__title">{{ 'experiences' | translate }}</h1>
+
+		<div id="experiences">
+			<div class="experiences__list" ng-repeat="experience in $ctrl.experiences">
+				<h2 class="experiences__list-title">
+					{{experience.position}}
+					<span class="experiences__list-location">// {{experience.location}}</span>
+				</h2>
+
+				<p class="experiences__description">
+					<small class="experiences__timeframe">{{experience.timeframe}}</small>
+					{{experience.description}}
+				</p>
+			</div>
+		</div>
+	</div>
+</section>

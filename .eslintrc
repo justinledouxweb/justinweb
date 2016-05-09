@@ -1,0 +1,18 @@
+{
+  "extend": "airbnb",
+  "globals": {
+    "angular": true
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "jasmine": true
+  },
+  "rules": {
+    "indent": [2, 2],
+    "no-trailing-space": [3, { "skipBlankLines": true }],
+    "max-length": [3, 150, 4, { "ignoreUrls": true }],
+    "no-console": [2, { "allow": ["log"] }],
+    "global-require": 0
+  }
+}

@@ -1,0 +1,30 @@
+<header class="header hero">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<img src="/images/signature.svg" class="hero__logo">
+			</div>
+
+			<p class="introduction col-sm-8 col-sm-push-2" ng-bind-html="'heroText' | translate"></p>
+		</div>
+
+		<div class="window">
+			<div class="window__title-bar">
+				<div class="window__controls">
+					<span class="window__controls window__close"></span>
+					<span class="window__controls window__minimize"></span>
+					<span class="window__controls window__resize"></span>
+				</div>
+
+				<p class="window__title">{{$ctrl.title}}</p>
+			</div>
+
+			<div class="window__content-container clearfix">
+				<div class="window__gutter"><pre>$</pre></div>
+
+				<div class="window__content"><pre><code>node start justinweb.js <span class="window__cursor">|</span><br><br><span class="code--green">{{ 'heroName' | translate }}</span>Justin Ledoux<br><span class="code--green">{{ 'heroEmail' | translate }}</span><a href="mailto:justin.ledoux@justinweb.pro">justin.ledoux@justinweb.pro</a><br><span class="code--green">{{ 'heroCell' | translate }}</span><a href="tel:5147028287">(514) 702-8287</a></code></pre>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
