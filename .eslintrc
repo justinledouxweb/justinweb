@@ -1,0 +1,24 @@
+{
+  "env": {
+    "jasmine": true,
+    "browser": true,
+    "commonjs": true,
+    "es6": true
+  },
+  "plugins": [
+    "jasmine"
+  ],
+  "extends": [
+    "airbnb",
+    "angular"
+  ],
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "rules": {
+    "comma-dangle": [2, "never"],
+    "angular/log": [1],
+    "angular/no-service-method": [1]
+  },
+  "autofix": true
+}
