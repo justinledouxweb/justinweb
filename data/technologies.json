@@ -2,6 +2,8 @@
 	"technologies": [
 		"AngularJS",
 		"ES2015 JavaScript",
+		"Jasmine",
+		"Protractor",
 		"Node.JS",
 		"Express",
 		"MongoDB",
