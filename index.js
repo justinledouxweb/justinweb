@@ -1,3 +1,5 @@
+'use strict';
+
 const ENV = process.env.NODE_ENV;
 const express = require('express');
 const app = express();
@@ -34,7 +36,7 @@ const hdb = handlebars.create(handlebarsConfig.handlebars);
 app.engine('handlebars', hdb.engine);
 app.set('view engine', 'handlebars');
 app.set('view options', {
-  layout: 'main.handlebars'
+  layout: 'main.handlebars',
 });
 
 // App setup environment port
@@ -46,83 +48,81 @@ app.use(bodyParser.json());
 app.use(cookieParser(process.env.COOKIE_KEY));
 app.use(session({
   cookieName: 'session',
-  secret:         process.env.SESSION_KEY,
-  duration:       7 * 24 * 60 * 60 * 1000, // 7 days
+  secret: process.env.SESSION_KEY,
+  duration: 7 * 24 * 60 * 60 * 1000, // 7 days
   activeDuration: 1 * 24 * 60 * 60 * 1000, // 1 day
-  httpOnly:       true, // don't let javascript access coockies ever
-  secure:         true, // only use coockies over https
-}))
+  httpOnly: true, // don't let javascript access coockies ever
+  secure: true, // only use coockies over https
+}));
 app.use(session({
   cookieName: 'eocFormData',
   secret: process.env.SESSION_KEY,
-  secure: true, // only use coockies over https
-}))
-app.use(flash())
+  secure: true, // only use coockies over https
+}));
+app.use(flash());
 app.use((req, res, next) => {
-  let regex = new RegExp('multipart/form-data')
+  const regex = new RegExp('multipart/form-data');
 
-  if (regex.test(req.headers[ 'content-type' ])) {
-    let form = new formidable.IncomingForm()
+  if (regex.test(req.headers['content-type'])) {
+    const form = new formidable.IncomingForm();
 
-    form.multiples = true
+    form.multiples = true;
     form.parse(req, (err, fields, files) => {
-      if (err) return console.error(err)
+      if (err) return console.error(err);
 
-      req.files = files
-      req.body = fields
-      next()
-    })
+      req.files = files;
+      req.body = fields;
+      next();
+    });
+  } else {
+    next();
   }
+});
 
-  else {
-    next()
-  }
-})
+app.use(csurf());
+app.use(compression());
+app.use(express.static(`${__dirname}/public/`, config.staticResourceCache));
+app.use(favicon(`${__dirname}/public/favicon.ico`));
 
-app.use(csurf())
-app.use(compression())
-app.use(express.static(`${__dirname}/public/`, config.staticResourceCache))
-app.use(favicon(`${__dirname}/public/favicon.ico`))
-
-app.use(function formidableMiddleware (req, res, next) {
-  res.locals.baseURL              = config.baseURL
-  res.locals.staticResourcesPath  = config.staticResourcesBaseURL
+app.use((req, res, next) => {
+  res.locals.baseURL = config.baseURL;
+  res.locals.staticResourcesPath = config.staticResourcesBaseURL;
   // res.locals.uploadedFilePath    = config.uploadBaseURL
-  res.locals.jqueryPath           = config.jQuery
-  res.locals.csrfToken            = req.csrfToken()
-  res.locals.criticalCss          = criticalCss
+  res.locals.jqueryPath = config.jQuery;
+  res.locals.csrfToken = req.csrfToken();
+  res.locals.criticalCss = criticalCss;
   // res.locals.flash                 = req.flash('flash')[0]
   // res.locals.froalaKey             = config.froalaLicense
-  res.locals.isProduction         = process.env.NODE_ENV === 'production'
+  res.locals.isProduction = process.env.NODE_ENV === 'production';
 
-  next()
-})
+  next();
+});
 
 // routes
-require('./routes.js')(app)
+require('./routes.js')(app);
 
-app.use(function logErrors (err, req, res, next) {
-  console.error(err.stack)
-  next(err)
-})
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  next(err);
+});
 
-app.use(function clientErrorHandler (err, req, res, next) {
-  if (req.xhr) res.status(500).json({ error: err.stack })
-  else next(err)
-})
+app.use((err, req, res, next) => {
+  if (req.xhr) res.status(500).json({ error: err.stack });
+  else next(err);
+});
 
-app.use(function errorHandler (err, req, res, next) {
-  res.status(500)
-  res.render('500')
-})
+app.use((err, req, res, next) => {
+  res.status(500);
+  res.render('500');
+});
 
-app.use(function fourOfour (req, res, next) {
-  res.status(404)
-  res.render('404')
-})
+app.use((req, res, next) => {
+  res.status(404);
+  res.render('404');
+});
 
 // start the server in cluster
-if (require.main === module) server(app)
-else module.exports = server(app)
+if (require.main === module) server(app);
+else module.exports = server(app);
 
-module.exports = app
+module.exports = app;

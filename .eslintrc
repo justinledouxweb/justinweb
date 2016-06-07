@@ -1,24 +1,26 @@
 {
-  "env": {
-    "jasmine": true,
+  "extends": "airbnb",
+  "globals": {
+    "angular": true,
+    "_": true,
+    "tinymce": true,
+    "$": true,
     "browser": true,
-    "commonjs": true,
-    "es6": true
-  },
-  "plugins": [
-    "jasmine"
-  ],
-  "extends": [
-    "airbnb",
-    "angular"
-  ],
-  "parserOptions": {
-    "sourceType": "module"
+    "element": true,
+    "by": true
   },
   "rules": {
-    "comma-dangle": [2, "never"],
-    "angular/log": [1],
-    "angular/no-service-method": [1]
+    "indent": [2, 2, { "SwitchCase": 1 }],
+    "no-use-before-define": 0,
+    "no-trailing-spaces": [2, { "skipBlankLines": true }],
+    "max-len": [2, 80, 2, { "ignoreUrls": true }],
+    "no-console": [2, { "allow": ["log"] }],
+    "prefer-template": 2,
+    "no-restricted-syntax": [0, "ForInStatement"]
   },
-  "autofix": true
+  "env": {
+    "browser": true,
+    "node": true,
+    "jasmine": true
+  }
 }
