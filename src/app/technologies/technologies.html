@@ -1,0 +1,27 @@
+<section class="section technologies">
+	<div class="container">
+		<h1 class="section__title">{{ 'technologies' | translate }}</h1>
+
+		<div class="window">
+			<div class="window__title-bar">
+				<div class="window__controls">
+					<span class="window__controls window__close"></span>
+					<span class="window__controls window__minimize"></span>
+					<span class="window__controls window__resize"></span>
+				</div>
+
+				<p class="window__title">{{ 'technologiesWindowTitle' | translate }}</p>
+			</div>
+
+			<div class="window__content-container window__line-number clearfix">
+				<div class="window__content">
+					<pre><code><span class="code--blue">var</span> techs <span class="code--pink">=</span> [
+<span ng-repeat="technology in $ctrl.technologies"><span class="code--yellow">&nbsp;&nbsp;"{{technology}}"</span>,<br ng-if="!$last"></span>
+];<span class="window__gutter"><span></span>
+<span ng-repeat="i in $ctrl.lineNumber"><br></span>
+</span></code></pre>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

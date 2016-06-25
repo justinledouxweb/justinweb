@@ -1,0 +1,70 @@
+{
+	"experiences": [
+		{
+			"position": "Développeur UI sénior",
+			"location": "TEKsystems Global Solutions",
+			"timeframe": "Depuis avril 2016 (Présent)",
+			"description": "Je travaille finalement pour une des meilleures firmes de solution technologique dans le monde! Apprendre et dépasser les attentes des meilleurs est exactement ce que je sais faire!"
+		},
+		{
+			"position": "Gestionnaire de projet web et logiciel",
+			"location": "QuickSeries Publishing Inc.",
+			"timeframe": "Octobre 2015 à avril 2016",
+			"description": "J’ai commencé à travailler au chevet de mon père afin de l’aider à transformer son entreprise d’édition en une de développement logiciel. Gérer une équipe de développeurs mobile et web, jouer le rôle de SCRUM master, participer aux décisions exécutives, designer le guide de style d’applications, développer des applications web était seulement quelques une des mes tâches."
+		},
+		{
+			"position": "Lead, designer et développeur UI/UX sénior",
+			"location": "Pages Jaunes",
+			"timeframe": "Octobre 2013 à juillet 2015",
+			"description": "J’ai entrepris un gros défi: guider les efforts de développement UI d’une équipe qui change le futur des Pages Jaunes. Cette tâche nous demandait de consolider plus de 40 outils de vente en une seule application web, en utilisant les technologies web les plus avancées, un design moderne et interactif, et une nouvelle façon de gérer le développement logiciel. Cette opportunité fut une des plus importantes de ma carrière puisqu’elle a été une des plus complexe et difficile à réaliser."
+		},
+		{
+			"position": "Développeur et designer UI / UX et Scrum Master",
+			"location": "Schwump GmbH",
+			"timeframe": "Octobre 2013",
+			"description": "Schwump est une compagnie Almande avec un problème très complexe entre leur main: la prise et la gestion de réservation en ligne. Pour les mortels, ceci ne semble pas être si difficile, mais d'un point de vue UI, UX et de programmation, beaucoup de recherche et développement est requis. C'est pour cela que j'ai décidé d'embarquer sur cette aventure, non seulement pour résoudre le problème, mais aussi pour créer la meilleure expérience en réservation disponible à ce jour. En prenant aussi le rôle du SCRUM master, je nous ai mis au défi de devenir agile."
+		},
+		{
+			"position": "Développeur et designer UI / UX (contractuel)",
+			"location": "QuickSeries Publishing inc.",
+			"timeframe": "Depuis october 2013 (présent)",
+			"description": "QuickSeries Publishing est présentement en train d’accroître leur division du développement logiciel avec plusieurs produits bien intéressants. Je suis responsable de définir le \"flow\" de chacune de ses applications de façon claire, en passant pas les \"wireframes\", prototypes haute-fidélité, test utilisateur, et finalement, appliquer une interface utilisateur simple et attrayante pour chaque application."
+		},
+		{
+			"position": "Chef développeur UX",
+			"location": "Optima",
+			"timeframe": "Juin à octobre 2013",
+			"description": "J’ai joint une équipe de designers et de développeurs afin de créer les meilleures applications sociale et analytique sur le marché."
+		},
+		{
+			"position": "Designer et développeur web",
+			"location": "David & Goliath",
+			"timeframe": "Avril à juin 2013",
+			"description": "Gestion et coordination des efforts de développement et design web afin de surpasser les attentes de nos clients, encore et encore."
+		},
+		{
+			"position": "Consultant UI / UX",
+			"location": "QuickSeries Publishing inc.",
+			"timeframe": "Depuis juin 2011",
+			"description": "En participant aux rencontres initiales de développement de projet chez QuickSeries Publishing, j’ai eu l’opportunité de guider certains aspects du UI et du UX de leurs applications “QuickSeries Mobile” sur iPhone, Android et BlackBerry."
+		},
+		{
+			"position": "JustinWEB",
+			"location": "Pigiste",
+			"timeframe": "Depuis 2011 (Présent)",
+			"description": "Consultant, développeur et designer d’application web à la pige."
+		},
+		{
+			"position": "inVantage",
+			"location": "Fondateur & chef exécutif",
+			"timeframe": "Août 2011 à août 2012",
+			"description": "inVantage fut une petite entreprise de développement logiciel avec le but d’innover et de révolutionner comment l’industrie intègre et utilise le logiciel d’un point de vue professionnel et personnel. Malheureusement, nous avons échoué, mais nous en sommes ressortis gagnants avec tout ce que nous avons appris. Je porterai toujours cette expérience vers l’avant."
+		},
+		{
+			"position": "Luxart Productions inc",
+			"location": "Fondateur & chef exécutif",
+			"timeframe": "Août 2009 à janvier 2012",
+			"description": "Luxart Productions était un studio d’enregistrement et d’édition vidéo. Ce fut à ce moment de ma vie que j’ai appris au niveau service client, maintenir une relation saine d’affaire avec eux, ainsi que d’offrir le meilleur service que j’en étais capable."
+		}
+	]
+}
