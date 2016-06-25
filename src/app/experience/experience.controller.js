@@ -1,16 +1,32 @@
-const experiencesEng = require('../../../data/experiences-eng.json');
-const experiencesFr = require('../../../data/experiences-fr.json');
+import experiencesEng from '../../../data/experiences-eng.json';
+import experiencesFr from '../../../data/experiences-fr.json';
 
 class ExperienceController {
-	constructor($translate) {
-		this.experiences = $translate.use().substring(0, 2) === 'en'
-			? experiencesEng.experiences
-			: experiencesFr.experiences;
-	}
+  constructor($translate, $rootScope, language) {
+    this.$translate = $translate;
+    this.$rootScope = $rootScope;
+    this.language = language;
+  }
+
+  $onInit() {
+    this.experiences = this.getLanguageData(this.language.getCurrentLanguage());
+    this.$rootScope.$on('$translateChangeStart', (event, data) => {
+      this.experiences = this.getLanguageData(data.language);
+    });
+  }
+
+  getLanguageData(language) {
+    return this.language.getCurrentLanguageData(
+      language,
+      experiencesEng.experiences,
+      experiencesFr.experiences);
+  }
 }
 
 ExperienceController.$inject = [
-	'$translate'
-]
+  '$translate',
+  '$rootScope',
+  'language',
+];
 
 export default ExperienceController;

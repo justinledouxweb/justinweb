@@ -1,18 +1,26 @@
 {
-  "extend": "airbnb",
+  "extends": "airbnb",
   "globals": {
-    "angular": true
+    "angular": true,
+    "_": true,
+    "tinymce": true,
+    "$": true,
+    "browser": true,
+    "element": true,
+    "by": true
+  },
+  "rules": {
+    "indent": [2, 2, { "SwitchCase": 1 }],
+    "no-use-before-define": 0,
+    "no-trailing-spaces": [2, { "skipBlankLines": true }],
+    "max-len": [1, 120, 2, { "ignoreUrls": true }],
+    "no-console": [2, { "allow": ["log"] }],
+    "prefer-template": 2,
+    "no-restricted-syntax": [0, "ForInStatement"]
   },
   "env": {
     "browser": true,
     "node": true,
     "jasmine": true
-  },
-  "rules": {
-    "indent": [2, 2],
-    "no-trailing-space": [3, { "skipBlankLines": true }],
-    "max-length": [3, 150, 4, { "ignoreUrls": true }],
-    "no-console": [2, { "allow": ["log"] }],
-    "global-require": 0
   }
 }

@@ -1,26 +1,26 @@
 class NavBarController {
-	constructor($translate, $location) {
-		this.$translate = $translate;
-		this.$location = $location;
+  constructor($translate, $location, language) {
+    this.$translate = $translate;
+    this.$location = $location;
+    this.language = language;
+  }
 
-		this.changeLanguage(this.getCurrentLanguage());
-	}
+  $onInit() {
+    this.changeLanguage(this.language.getCurrentLanguage());
+  }
 
-	getCurrentLanguage() {
-		return this.$translate.use().substring(0, 2);
-	}
-
-	changeLanguage(languageKey) {
-		this.$translate.use(languageKey)
-		this.currentLanguage = this.getCurrentLanguage();
-		this.isEnglish = this.currentLanguage === 'en';
-		this.isFrench = this.currentLanguage === 'fr';
-	}
+  changeLanguage(languageKey) {
+    this.$translate.use(languageKey);
+    this.currentLanguage = this.language.getCurrentLanguage();
+    this.isEnglish = this.currentLanguage === 'en';
+    this.isFrench = this.currentLanguage === 'fr';
+  }
 }
 
 NavBarController.$inject = [
-	'$translate',
-	'$location'
+  '$translate',
+  '$location',
+  'language',
 ];
 
 export default NavBarController;
