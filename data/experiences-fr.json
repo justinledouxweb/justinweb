@@ -1,9 +1,15 @@
 {
 	"experiences": [
 		{
+			"position": "Consultant développeur UI sénior",
+			"location": "Bibliothèque et Archives nationales du Québec (BAnQ)",
+			"timeframe": "Depuis juin 2016 (Présent)",
+			"description": "J’ai été engagé sur le projet ambitieux de la refonte de la solution d’archivage, maintenant âgé de 26 ans, de la BAnQ en une application web AngularJS interactive et moderne."
+		},
+		{
 			"position": "Développeur UI sénior",
 			"location": "TEKsystems Global Solutions",
-			"timeframe": "Depuis avril 2016 (Présent)",
+			"timeframe": "Avril à juin 2016",
 			"description": "Je travaille finalement pour une des meilleures firmes de solution technologique dans le monde! Apprendre et dépasser les attentes des meilleurs est exactement ce que je sais faire!"
 		},
 		{
