@@ -1,6 +1,8 @@
 <nav class="nav-bar">
 	<div class="container">
-		<a ng-href="{{ 'downloadLink' | translate }}" class="btn btn--outline btn--outline-white customer-login">{{ 'downloadCv' | translate }}</a>
+		<a ng-href="{{ 'downloadLink' | translate }}" class="btn btn--outline btn--outline-white customer-login">
+      {{ 'downloadCv' | translate }}
+    </a>
 
 		<a ng-click="$ctrl.changeLanguage('en')" ng-if="$ctrl.isFrench" class="nav-bar__language">Eng</a>
 		<a ng-click="$ctrl.changeLanguage('fr')" ng-if="$ctrl.isEnglish" class="nav-bar__language">Fr</a>
