@@ -10,15 +10,10 @@ class NavBarController {
   }
 
   changeLanguage(languageKey) {
-    debugger;
     this.$translate.use(languageKey);
     this.currentLanguage = this.language.getCurrentLanguage();
     this.isEnglish = this.currentLanguage === 'en';
     this.isFrench = this.currentLanguage === 'fr';
-  }
-
-  downloadCv($event) {
-    debugger;
   }
 }
 
