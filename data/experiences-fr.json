@@ -1,9 +1,15 @@
 {
 	"experiences": [
 		{
+			"position": "Consultant développeur UI expert",
+			"location": "Morgan Stanley",
+			"timeframe": "Depuis November 2016 (Présent)",
+			"description": "J'ai travaillé très dur pour ce moment. Et comme à dit quelqu'un: \"Un gagnant est simplement un perdant qui à essayé une fois de plus\". Finalement, je suis fier de me joindre au Groupe de l'Expérience Utilisateur chez Morgan Stanley afin de maintenir et accroître leur librairie de composante et thème réutilisable. Un défi de taille que je ne pouvais plus attendre.",
+		},
+		{
 			"position": "Consultant développeur UI sénior",
 			"location": "Bibliothèque et Archives nationales du Québec (BAnQ)",
-			"timeframe": "Depuis juin 2016 (Présent)",
+			"timeframe": "Juin à novembre 2016",
 			"description": "J’ai été engagé sur le projet ambitieux de la refonte de la solution d’archivage, maintenant âgé de 26 ans, de la BAnQ en une application web AngularJS interactive et moderne."
 		},
 		{

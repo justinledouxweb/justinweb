@@ -1,5 +1,7 @@
 {
 	"technologies": [
+		"Angular 2",
+		"TypeScript",
 		"AngularJS",
 		"ES2015 JavaScript",
 		"Jasmine",
