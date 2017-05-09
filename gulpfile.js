@@ -1,5 +1,4 @@
 const gulp = require('gulp');
-const sourcemap = require('gulp-sourcemaps');
 const browserify = require('browserify');
 const uglify = require('gulp-uglify');
 const stringify = require('stringify');
@@ -56,19 +55,3 @@ gulp.task('html', () => gulp.src('./src/app/index.html')
   .pipe(gulp.dest('public')));
 
 gulp.task('all', ['bootstrap', 'style', 'html', 'script']);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
