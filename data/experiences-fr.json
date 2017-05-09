@@ -1,14 +1,26 @@
 {
 	"experiences": [
 		{
-			"position": "Consultant développeur UI expert",
+			"position": "Vice-Président du Développement Logiciel",
+			"location": "QuickSeries Publishing Inc.",
+			"timeframe": "Since May 2017 (Current)",
+			"description": "Je suis très heureux de joindre QuickSeries Publishing en tant que vice-président du développement logiciel. Je suis aussi très fier de diriger une équipe de développeurs brillants vers la vision ultime de QuickSeries.",
+		},
+		{
+			"position": "Lead UI Developer & Web Development Best Practices Evangelist (short contract)",
+			"location": "Videotron",
+			"timeframe": "Avril 2017 à mai 2017",
+			"description": "J'ai eu le mandat de créer, implémenter, documenter, communiquer et former des développeurs sur les meilleurs pratiques en développement web. J'ai aussi dirigé une équipe de développeurs front et back-end afin de revamper certains services accessibles aux publiques."
+		},
+		{
+			"position": "Consultant développeur UI expert (contract)",
 			"location": "Morgan Stanley",
-			"timeframe": "Depuis November 2016 (Présent)",
+			"timeframe": "Novembre 2016 à avril 2017",
 			"description": "J'ai travaillé très dur pour ce moment. Et comme à dit quelqu'un: \"Un gagnant est simplement un perdant qui à essayé une fois de plus\". Finalement, je suis fier de me joindre au Groupe de l'Expérience Utilisateur chez Morgan Stanley afin de maintenir et accroître leur librairie de composante et thème réutilisable. Un défi de taille que je ne pouvais plus attendre.",
 		},
 		{
 			"position": "Consultant développeur UI sénior",
-			"location": "Bibliothèque et Archives nationales du Québec (BAnQ)",
+			"location": "Bibliothèque et Archives nationales du Québec (BAnQ) (contract)",
 			"timeframe": "Juin à novembre 2016",
 			"description": "J’ai été engagé sur le projet ambitieux de la refonte de la solution d’archivage, maintenant âgé de 26 ans, de la BAnQ en une application web AngularJS interactive et moderne."
 		},
@@ -25,19 +37,19 @@
 			"description": "J’ai commencé à travailler au chevet de mon père afin de l’aider à transformer son entreprise d’édition en une de développement logiciel. Gérer une équipe de développeurs mobile et web, jouer le rôle de SCRUM master, participer aux décisions exécutives, designer le guide de style d’applications, développer des applications web était seulement quelques une des mes tâches."
 		},
 		{
-			"position": "Lead, designer et développeur UI/UX sénior",
+			"position": "Lead, designer et développeur UI/UX sénior (contract)",
 			"location": "Pages Jaunes",
 			"timeframe": "Octobre 2013 à juillet 2015",
 			"description": "J’ai entrepris un gros défi: guider les efforts de développement UI d’une équipe qui change le futur des Pages Jaunes. Cette tâche nous demandait de consolider plus de 40 outils de vente en une seule application web, en utilisant les technologies web les plus avancées, un design moderne et interactif, et une nouvelle façon de gérer le développement logiciel. Cette opportunité fut une des plus importantes de ma carrière puisqu’elle a été une des plus complexe et difficile à réaliser."
 		},
 		{
-			"position": "Développeur et designer UI / UX et Scrum Master",
+			"position": "Développeur et designer UI / UX et Scrum Master (contract)",
 			"location": "Schwump GmbH",
 			"timeframe": "Octobre 2013",
 			"description": "Schwump est une compagnie Almande avec un problème très complexe entre leur main: la prise et la gestion de réservation en ligne. Pour les mortels, ceci ne semble pas être si difficile, mais d'un point de vue UI, UX et de programmation, beaucoup de recherche et développement est requis. C'est pour cela que j'ai décidé d'embarquer sur cette aventure, non seulement pour résoudre le problème, mais aussi pour créer la meilleure expérience en réservation disponible à ce jour. En prenant aussi le rôle du SCRUM master, je nous ai mis au défi de devenir agile."
 		},
 		{
-			"position": "Développeur et designer UI / UX (contractuel)",
+			"position": "Développeur et designer UI / UX (contract)",
 			"location": "QuickSeries Publishing inc.",
 			"timeframe": "Depuis october 2013 (présent)",
 			"description": "QuickSeries Publishing est présentement en train d’accroître leur division du développement logiciel avec plusieurs produits bien intéressants. Je suis responsable de définir le \"flow\" de chacune de ses applications de façon claire, en passant pas les \"wireframes\", prototypes haute-fidélité, test utilisateur, et finalement, appliquer une interface utilisateur simple et attrayante pour chaque application."
