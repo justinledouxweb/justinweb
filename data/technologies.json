@@ -1,29 +1,19 @@
 {
 	"technologies": [
-		"Angular 2",
-		"TypeScript",
 		"AngularJS",
-		"ES2015 JavaScript",
-		"Jasmine",
-		"Protractor",
+		"Angular 2+",
+		"TypeScript",
 		"Node.JS",
 		"Express",
 		"MongoDB",
+		"Redis",
+		"AWS",
 		"Heroku",
-		"Grunt",
-		"Gulp",
-		"HTML5",
-		"CSS3",
-		"jQuery",
-		"AJAX",
-		"SASS",
-		"HAML",
-		"Handlebars",
-		"Ruby on Rails",
-		"PHP",
-		"Liferay",
-		"JSP Prime Faces",
+		"Webpack",
+		"SCSS",
 		"Git",
-		"Wordpress"
+		"Highcharts",
+		"Socket.io",
+		"Postman"
 	]
 }
