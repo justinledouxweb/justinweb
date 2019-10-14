@@ -29,7 +29,7 @@
     "babelify": "^7.3.0",
     "bcryptjs": "^2.3.0",
     "body-parser": "^1.14.2",
-    "bootstrap": "^3.3.6",
+    "bootstrap": "^3.4.1",
     "browser-sync": "^2.13.0",
     "browserify-ngannotate": "^2.0.0",
     "client-sessions": "^0.8.0",
