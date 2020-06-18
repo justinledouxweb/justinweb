@@ -16,7 +16,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "angular": ">=1.5.5",
+    "angular": ">=1.8.0",
     "angular-mock": ">=1.0.0",
     "angular-sanitize": ">=1.5.5",
     "angular-translate": ">=2.11.0",
