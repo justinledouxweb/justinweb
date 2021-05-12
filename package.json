@@ -65,7 +65,7 @@
     "moment": ">=2.11.1",
     "mongoose": "^5.7.5",
     "newrelic": "^5.13.1",
-    "nodemailer": "^6.3.1",
+    "nodemailer": "^6.4.16",
     "path": ">=0.12.7",
     "request": ">=2.72.0",
     "serve-favicon": ">=2.3.0",
