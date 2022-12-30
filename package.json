@@ -61,7 +61,7 @@
     "istanbul": ">=0.4.3",
     "jasmine": "^3.5.0",
     "mkdirp": ">=0.5.1",
-    "mocha": "^6.2.1",
+    "mocha": "^10.2.0",
     "moment": ">=2.11.1",
     "mongoose": "^5.7.5",
     "newrelic": "^5.13.1",
